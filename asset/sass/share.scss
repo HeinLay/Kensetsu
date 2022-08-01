@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/* =======================================================
+*  share.css
+* ======================================================= */
+/* import
+-------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=swap');
+@import "base/config";
+@import "base/base";
+@import "base/general";
+@import "library/slick";
+@import "layout/content";
+@import "layout/header";
+@import "layout/footer";
+@import "module/breadcrumb";
+@import "module/pagenation";
+@import "module/modal";
+@import "module/scroll";
+@import "module/drawer";
+@import "module/form";
+@import "module/part";
+@import "page/top";
+@import "page/search";
+@import "page/dashboard";

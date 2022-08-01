@@ -1,0 +1,107 @@
+/* ========================================================
+content.css
+======================================================== */
+/* content, section
+-------------------------------------------------------- */
+
+/* sp */
+@include mq(sp) {
+  .content {
+    padding-top: $header-height-sp;
+  }
+
+  .sec-full {
+    width: 94%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .sec-med {
+    width: 94%;
+  }
+
+  .sec-min {
+    width: 94%;
+  }
+
+  .sec-theme-inner {
+    position: relative;
+    padding: 1em;
+  }
+}
+
+/* tab */
+@include mq(tab) {
+  .content {
+    padding-top: $header-height-sp;
+  }
+
+  .sec-full {
+    width: 94%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .sec-med {
+    width: 94%;
+  }
+
+  .sec-min {
+    width: 94%;
+  }
+
+  .sec-theme-inner {
+    position: relative;
+    padding: 1em;
+  }
+}
+
+/* laptop */
+@include mq(laptop) {
+  .content {
+    padding-top: $header-height-sp;
+  }
+
+  .sec-full {
+    width: 96%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .sec-med {
+    width: 110rem;
+  }
+
+  .sec-min {
+    width: 103rem;
+  }
+
+  .sec-theme-inner {
+    position: relative;
+    padding: 3em;
+  }
+}
+
+/* pc */
+@include mq(desktop) {
+  .content {
+    padding-top: $header-height-pc;
+  }
+
+  .sec-full {
+    max-width: 119rem;
+    margin: 0 auto;
+  }
+
+}
+
+/* content, section theme
+-------------------------------------------------------- */
+
+
+/* page content
+-------------------------------------------------------- */
+
+
+/* padding, margin
+-------------------------------------------------------- */

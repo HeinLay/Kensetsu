@@ -1,0 +1,701 @@
+/* ========================================================
+ styles for front page
+======================================================== */
+
+/* mainvisual
+-------------------------------------------------------- */
+.mainvisual {
+  width: 100%;
+  height: 347px;
+  background: url('../img/top/img_mv_bg.png')no-repeat center/cover;
+
+  @include mq (sp) {
+    position: relative;
+    width: 100vw;
+    height: 85.333vw;
+    background: url('../img/top/img_mv_sp.png')no-repeat center/cover;
+  }
+
+  .mv-blk {
+    max-width: 97rem;
+  }
+
+  .mv-txt-img {
+    position: relative;
+    width: 67%;
+    max-width: 64.6rem;
+
+    @include mq (sp) {
+      position: unset;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .top-ttl {
+      overflow: hidden;
+      color: transparent;
+      text-indent: 100%;
+      white-space: nowrap;
+    }
+  }
+
+  .posted-jobs {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 93.8%;
+    flex-direction: column;
+    align-items: center;
+    width: 56.5%;
+    padding: 2.9rem 1.5rem;
+    background-color: $white;
+    letter-spacing: .25rem;
+    transform: translateY(-50%);
+    border-radius: 12px;
+    @include m-font();
+
+    @include mq (sp) {
+      top: 67%;
+      left: 50%;
+      width: 92%;
+      padding: 1.9rem 1rem 2.5rem;
+      box-shadow: $mv-card-shadow;
+      transform: translateX(-50%);
+    }
+
+    .total-posted {
+      padding-bottom: .9rem;
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: .1rem;
+      @include m-font();
+
+      @include mq (tab) {
+        font-size: 1.660vw;
+      }
+
+      .total-num {
+        font-size: 3.8rem;
+        font-weight: 700;
+        @include m-font1();
+
+        @include mq (tab) {
+          font-size: 3.711vw;
+        }
+      }
+
+      .total-num,
+      .total-case {
+        color: $color01;
+      }
+    }
+
+    .date {
+      padding-bottom: 1.5rem;
+      color: #323f4b;
+      font-size: 1rem;
+      @include m-font();
+    }
+
+    .service-registration-btn {
+      display: flex;
+      position: relative;
+      position: relative;
+      align-items: center;
+      width: 30.5rem;
+      overflow: hidden;
+      padding: .5rem 1.3rem .5rem .7rem;
+      box-shadow: $l-btn-shadow;
+      background-color: $color08;
+      color: $white;
+      font-weight: 700;
+      -webkit-transform: translate3d(0, 0, 0);
+      border-radius: 29px;
+      -webkit-backface-visibility: hidden;
+
+      @include mq (tab) {
+        width: 100%;
+        font-size: 1.660vw;
+        letter-spacing: 0.14rem;
+      }
+
+      &:hover {
+        color: $color08;
+        outline: 2px solid $color08;
+
+        &::before {
+          transform: scale(1, 1);
+          transform-origin: left top;
+        }
+
+        .second-circle {
+          background-color: $color08;
+          color: $white;
+        }
+      }
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background: $white;
+        content: '';
+        transform: scale(0, 1);
+        transform-origin: right top;
+        transition: transform 0.6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+      }
+
+      .second-circle {
+        display: inline-block;
+        width: 4.6rem;
+        height: 4.6rem;
+        margin-right: 1rem;
+        padding-top: 1.5rem;
+        background-color: $white;
+        color: $color08;
+        font-size: 1.2rem;
+        text-align: center;
+        letter-spacing: 0;
+        border-radius: 50%;
+
+        @include mq (tab) {
+          margin-right: 0.7rem;
+          font-size: 1.172vw;
+        }
+      }
+    }
+
+    .guide-btn {
+      display: flex;
+      position: relative;
+      position: relative;
+      align-items: center;
+      width: 17.6rem;
+      overflow: hidden;
+      margin-top: 1.3rem;
+      padding: 1.1rem 1.1rem 1.2rem 3.1rem;
+      box-shadow: $m-btn-shadow;
+      color: $color01;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: .1rem;
+      outline: 1px solid $color01;
+      -webkit-transform: translate3d(0, 0, 0);
+      border-radius: 22.93px;
+      -webkit-backface-visibility: hidden;
+      @include m-font();
+
+      @include mq (tab) {
+        font-size: 1.367vw;
+      }
+
+      @include mq (sp) {
+        margin-top: 1.6rem;
+      }
+
+      &:hover {
+        color: $white;
+
+        &::before {
+          transform: scale(1, 1);
+          transform-origin: left top;
+        }
+      }
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background: $color01;
+        content: '';
+        transform: scale(0, 1);
+        transform-origin: right top;
+        transition: transform 0.6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+      }
+
+      span {
+        padding-right: .5rem;
+      }
+    }
+  }
+}
+
+/* sec-benefits
+-------------------------------------------------------- */
+.sec-benefits {
+  padding: 6.8rem 0;
+
+  @include mq (sp) {
+    padding: 18rem 0 5rem;
+  }
+
+  .sec-full {
+    @include mq (sp) {
+      margin-right: 0;
+      margin-left: 2.2rem;
+    }
+  }
+
+  .sec-ttl {
+    position: relative;
+    line-height: 1.21;
+    color: $color07;
+    font-weight: 600;
+    text-align: center;
+    @include m-font();
+
+    .main-ttl {
+      position: relative;
+      font-size: 1.8rem;
+
+      @include mq (sp) {
+        font-size: 1.5rem;
+      }
+
+      &::before,
+      &::after {
+        position: absolute;
+        top: -1rem;
+        width: 2.1rem;
+        height: 3.5rem;
+        background: url('../img/icon/img_sec_ttl.png') no-repeat center/contain;
+        content: '';
+
+        @include mq (sp) {
+          top: -0.1rem;
+          width: 3.5rem;
+          height: 5.4rem;
+        }
+      }
+
+      &::before {
+        left: -4.5rem;
+
+        @include mq (sp) {
+          left: -7.8rem;
+        }
+      }
+
+      &::after {
+        right: -4.1rem;
+
+        @include mq (sp) {
+          right: -4.3rem;
+        }
+      }
+
+      .benefits-txt {
+        color: $color01;
+        font-size: 3.4rem;
+
+        @include mq (sp) {
+          font-size: 2.6rem;
+        }
+      }
+    }
+  }
+
+  .merit-blk {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 5.8rem;
+
+    @include mq(sp) {
+      justify-content: flex-start;
+      padding-top: 3rem;
+    }
+
+    .merit-col {
+      margin-right: 2.6rem;
+      margin-bottom: 3rem;
+
+      @include mq(sp) {
+        width: 348px;
+        margin: 0 auto 1.8rem auto;
+      }
+
+      @include mq(desktop) {
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      @include mq(sp) {
+        &:nth-child(4) {
+          .merit-img-txt {
+            .merit-num {
+              top: 50%;
+            }
+          }
+        }
+      }
+
+      .merit-img-txt {
+        position: relative;
+
+        @include mq(sp) {
+          text-align: right;
+        }
+
+        img {
+          border-radius: 12px;
+          object-fit: cover;
+
+          @include mq(sp) {
+            width: 100%;
+            height: 156px;
+            box-shadow: $ui-shadow;
+            max-width: 291px;
+            border-radius: 0;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+          }
+        }
+
+        .merit-num {
+          position: absolute;
+          top: -14.8%;
+          left: 4%;
+          color: $color01;
+          font-size: 1rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          @include m-font1();
+
+          @include mq(sp) {
+            top: 53px;
+            left: 0;
+            font-size: 1.2rem;
+          }
+
+          span {
+            display: inline-block;
+            font-size: 2.7rem;
+
+            @include mq(sp) {
+              font-size: 3.5rem;
+            }
+          }
+        }
+
+        .merit-txt {
+          position: absolute;
+          bottom: -9%;
+          left: 4.5%;
+          color: $white;
+          font-size: 1.8rem;
+          font-weight: 700;
+          @include m-font();
+
+          @include mq(sp) {
+            bottom: -14px;
+            left: 0;
+            font-size: 2rem;
+            text-align: left;
+          }
+
+          span {
+            display: inline-block;
+            margin-bottom: .6rem;
+            padding: .3rem .3rem .3rem 0;
+            background-color: $color01;
+            border-radius: 2.67px;
+          }
+        }
+      }
+
+      .merit-desc {
+        line-height: 1.7;
+        padding-top: 1.9rem;
+        font-size: 1.4rem;
+        @include m-font();
+
+        @include mq (sp) {
+          padding-right: 2.5rem;
+        }
+      }
+    }
+  }
+
+  .service-registration-btn {
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 30.5rem;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: .5rem 1.3rem .5rem .7rem;
+    box-shadow: $l-btn-shadow;
+    background-color: $color08;
+    color: $white;
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    -webkit-transform: translate3d(0, 0, 0);
+    border-radius: 29px;
+    -webkit-backface-visibility: hidden;
+    @include m-font();
+
+    @include mq (sp) {
+      margin: 1rem auto 0 auto;
+      padding: 0.4rem 0.2rem 0.5rem 0.9rem;
+      font-size: 1.7rem;
+      letter-spacing: 0.1rem;
+    }
+
+    &:hover {
+      color: $color08;
+      outline: 2px solid $color08;
+
+      &::before {
+        transform: scale(1, 1);
+        transform-origin: left top;
+      }
+
+      .second-circle {
+        background-color: $color08;
+        color: $white;
+      }
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background: $white;
+      content: '';
+      transform: scale(0, 1);
+      transform-origin: right top;
+      transition: transform 0.6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+    }
+
+    .second-circle {
+      display: inline-block;
+      width: 46px;
+      height: 46px;
+      margin-right: 10px;
+      padding-top: 15px;
+      background-color: $white;
+      color: $color08;
+      font-size: 12px;
+      text-align: center;
+      letter-spacing: 0;
+      border-radius: 50%;
+
+      @include mq (sp) {
+        width: 4.8rem;
+        height: 4.8rem;
+        margin-right: .9rem;
+        padding-top: 1.7rem;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+/* sec-search-box
+-------------------------------------------------------- */
+.sec-search-box {
+  padding: 7.2rem 0;
+  background-color: #f5f6f7;
+
+  @include mq (sp) {
+    padding: 3.9rem 0 1rem;
+  }
+
+  .sec-full {
+    max-width: 90rem;
+
+    .search-category {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        margin-right: 2rem;
+        margin-bottom: 2rem;
+
+        @include mq (sp) {
+          margin-right: 0.9rem;
+          margin-bottom: 1.2rem;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        a {
+          display: inline-block;
+          position: relative;
+          width: 16.4rem;
+          padding: 2rem 1.7rem;
+          box-shadow: $ui-shadow;
+          background-color: $white;
+          color: $color07;
+          font-size: 1.6rem;
+          font-weight: 700;
+          text-decoration: none;
+          text-align: center;
+          letter-spacing: 0.3rem;
+          border-radius: 1rem;
+          @include m-font();
+
+          @include mq(sp) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 10rem;
+            padding: 1.9rem 0.7rem 1.4rem;
+            letter-spacing: 0rem;
+          }
+
+          span {
+            padding-right: 1.2rem;
+            vertical-align: middle;
+
+            @include mq (sp) {
+              padding-right: 0;
+              padding-bottom: 1rem;
+              font-size: 1.4rem;
+            }
+          }
+
+          &:hover {
+            transition: opacity .3s;
+            opacity: 50%;
+          }
+
+          &.active {
+            color: $color01;
+            outline: 2px solid $color01;
+            border-radius: 10px;
+          }
+        }
+
+        .select-cat {
+          display: none;
+          position: absolute;
+          top: -7.4%;
+          left: -3.2%;
+          padding: 0.2rem 0.7rem;
+          background-color: $color01;
+          color: $white;
+          font-size: 1rem;
+          letter-spacing: 0;
+          border-radius: 29px;
+          @include m-font();
+
+          @include mq (sp) {
+            font-size: .9rem;
+          }
+        }
+
+        .active {
+          display: block;
+
+          @include mq (sp) {
+            display: flex;
+          }
+        }
+      }
+    }
+
+    .search-bar {
+      display: flex;
+      position: relative;
+      justify-content: space-between;
+      @include m-font();
+
+      @include mq (sp) {
+        flex-direction: column;
+      }
+
+      .search-input {
+        width: 73%;
+        padding: 2.1rem 1rem 1.7rem 6rem;
+        border: none;
+        box-shadow: $ui-shadow;
+        border-radius: 10px;
+
+        @include mq (sp) {
+          width: 93%;
+          margin: 0 auto;
+          padding: 2.1rem 1rem 1.7rem 5rem;
+        }
+      }
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 2.2%;
+        width: 1.9rem;
+        height: 1.9rem;
+        background: url('../img/icon/icon_search_blue.png') no-repeat center/cover;
+        content: '';
+        transform: translateY(-50%);
+
+        @include mq (sp) {
+          top: 17%;
+          left: 3.2rem;
+        }
+      }
+
+      .search-btn {
+        position: relative;
+        width: 24%;
+        overflow: hidden;
+        padding: 1.5rem 0;
+        border: none;
+        background-color: $color01;
+        color: $white;
+        font-size: 1.6rem;
+        font-weight: 700;
+        cursor: pointer;
+        -webkit-transform: translate3d(0, 0, 0);
+        border-radius: 2.9rem;
+        -webkit-backface-visibility: hidden;
+
+        @include mq (sp) {
+          width: 18.4rem;
+          margin: 3rem auto 4rem auto;
+          padding: 1rem 0;
+        }
+
+        &:hover {
+          &::before {
+            transform: scale(1, 1);
+            transform-origin: left top;
+          }
+        }
+
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          width: 100%;
+          height: 100%;
+          background: $color04;
+          content: '';
+          transform: scale(0, 1);
+          transform-origin: right top;
+          transition: transform 0.6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+        }
+      }
+    }
+  }
+}
