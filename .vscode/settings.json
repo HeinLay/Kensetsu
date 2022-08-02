@@ -27,5 +27,8 @@
         }
       ],
       "liveSassCompile.settings.autoprefix": null,
-      "liveSassCompile.settings.generateMap": false
+      "liveSassCompile.settings.generateMap": false,
+      "editor.codeActionsOnSave": {
+      
+      }
 }
