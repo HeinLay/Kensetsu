@@ -3,12 +3,6 @@ modal.css
 ======================================================== */
 /* modal settings
 -------------------------------------------------------- */
-.box {
-  height: 20rem;
-  margin-bottom: 10rem;
-  background: $black238;
-}
-
 .modal {
   display: none;
   position: fixed;
@@ -23,7 +17,7 @@ modal.css
   position: absolute;
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
+  background: $black251;
 }
 
 .modal-content {
@@ -37,28 +31,18 @@ modal.css
     transform: translate(0, 0);
   }
 
-  iframe {
-    width: 100%;
-    height: 20rem;
-
-    @include mq() {
-      width: 100%;
-      height: 60rem;
-    }
-  }
-
   .modal-panel {
     display: flex;
     flex-flow: column;
     width: 64%;
-    height: 40vh;
+    height: 50vh;
     background: $white;
     border-radius: 2rem;
     overflow-y: auto;
     @include m-centering;
 
-    @include mq(laptop) {
-      width: 90rem;
+    @include mq(tab) {
+      width: 80%;
       height: 60vh;
       overflow: hidden;
     }
@@ -75,135 +59,294 @@ modal.css
     }
 
     .modal-ttl {
-      padding: 1.2em 5rem;
       box-shadow: $header-shadow;
-      font-size: 2rem;
-      font-weight: 700;
-      text-align: left;
-      letter-spacing: 0.7rem;
       @include m-font();
 
-      @include mq(sp) {
-        padding: 0.5em;
-        background: $black246;
-        text-align: left;
+      div {
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        width: 89%;
+        margin: 0 auto;
+        padding: 2.5rem 0;
+        max-width: 80rem;
+      }
+
+      .search-conditions-ttl {
+        width: 44%;
+        color: $color07;
+        font-size: 2rem;
+        font-weight: 700;
+      }
+
+      .search-clear {
+        position: relative;
+        width: 135px;
+
+        a {
+          padding: 0.7rem 1.2rem 0.7rem 2.3rem;
+          border: 1px solid $color14;
+          color: $color07;
+          font-size: 1.2rem;
+          font-weight: 700;
+          border-radius: 3.4rem;
+        }
+
+        &::before {
+          position: absolute;
+          top: 50%;
+          left: 1.2rem;
+          width: 0.7rem;
+          height: 0.7rem;
+          background: url('#{$v-img-path}icon/icon_clear.png') no-repeat center/contain;
+          content: '';
+          transform: translateY(-50%);
+        }
+
       }
     }
 
     .modal-txt {
       line-height: 1.6;
-      padding: 2rem 0 6rem;
-      overflow-y: scroll;
+      padding: 2rem 0 5rem;
+      color: $color07;
+      overflow-y: auto;
 
       @include mq(sp) {
         height: 85%;
         padding: 2.5rem 0;
       }
 
-      .form-row {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+      .form-modal {
         width: 89%;
         margin: 0 auto;
         max-width: 80rem;
 
-        .checkbox-group {
-          display: inline-block;
-          width: 24%;
-          margin-bottom: 0.6rem;
+        .occupation-form-row {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+
+          .checkbox-group {
+            display: inline-block;
+            width: 24%;
+            margin-bottom: 0.6rem;
+
+            @include mq (tab) {
+              width: 32%;
+            }
+
+            @include mq (sp) {
+              width: 49%;
+            }
+
+            input[type=checkbox] {
+              display: none;
+              width: initial;
+              height: initial;
+              margin-bottom: 0;
+              padding: 0;
+              cursor: pointer;
+            }
+
+            label {
+              display: inline-block;
+              position: relative;
+              width: 100%;
+              padding: 1rem;
+              border: 1px solid $color14;
+              font-size: 1.4rem;
+              font-weight: 700;
+              cursor: pointer;
+              border-radius: 0.5rem;
+              @include m-font();
+
+              @include mq (sp) {
+                font-size: 1.3rem;
+              }
+            }
+
+            label:before {
+              display: inline-block;
+              width: 1.4rem;
+              height: 1.4rem;
+              margin-right: 0.5rem;
+              border: 1px solid $color14;
+              vertical-align: middle;
+              content: '';
+              border-radius: 50%;
+            }
+
+            input[type=checkbox]:checked+label:before {
+              border: 1px solid transparent;
+            }
+
+            input[type=checkbox]:checked+label:after {
+              display: block;
+              position: absolute;
+              top: 50%;
+              left: 1rem;
+              width: 1.6rem;
+              height: 1.6rem;
+              background: url('#{$v-img-path}icon/icon_modal_tick.png') no-repeat center/contain;
+              content: '';
+              transform: translateY(-50%);
+            }
+
+            input[type=checkbox]:checked+label {
+              border: 1px solid $color01;
+              color: $color01;
+            }
+
+          }
+        }
+
+        .occupation-form-btn {
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          width: 59%;
+          margin: 2rem auto 0;
+          font-size: 1.5rem;
+          font-weight: 700;
+          max-width: 80rem;
+          @include m-font();
 
           @include mq (tab) {
-            width: 32%;
+            width: 90%;
           }
 
           @include mq (sp) {
-            width: 49%;
-          }
-
-          input[type=checkbox] {
-            display: none;
-            width: initial;
-            height: initial;
-            margin-bottom: 0;
-            padding: 0;
-            cursor: pointer;
-          }
-
-          label {
-            display: inline-block;
-            position: relative;
+            flex-direction: column;
+            align-items: center;
             width: 100%;
-            padding: 1rem;
-            border: 1px solid $color14;
-            font-size: 1.4rem;
-            font-weight: 700;
-            cursor: pointer;
-            border-radius: 0.5rem;
-            @include m-font();
+          }
+
+          .total-jobs-search {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
             @include mq (sp) {
-              font-size: 1.3rem;
+              width: 100%;
+            }
+          }
+        }
+
+        .search-conditions-form {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+
+          .search-condition {
+            display: flex;
+            width: 49.5%;
+            margin-bottom: 1rem;
+
+            @include mq (sp) {
+              width: 100%;
+            }
+
+            .search-list {
+              display: flex;
+              position: relative;
+              align-items: center;
+              width: 100%;
+              padding: 1.2rem 2.8rem 1.2rem 0;
+              border: 1px solid $color14;
+              border-radius: 0.4rem;
+              @include m-font();
+
+              &::after {
+                position: absolute;
+                top: 50%;
+                right: 5%;
+                width: 0.8rem;
+                height: 1rem;
+                background: url('#{$v-img-path}icon/icon_list_btn.png') no-repeat center/contain;
+                content: '';
+                transform: translateY(-50%);
+              }
+
+              .cat-icon {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 6.5rem;
+                height: 2.9rem;
+                margin-right: 1.2rem;
+                color: $color07;
+                font-size: 1rem;
+                font-weight: 700;
+                border-right: 1px solid $color14;
+              }
+
+              .cat-txt {
+                color: $color10;
+                font-size: 1.4rem;
+                font-weight: 700;
+              }
+
+              &.active {
+                border: 1px solid $color01;
+
+                .cat-txt {
+                  color: $color01;
+                }
+              }
+            }
+          }
+        }
+
+        .search-field {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding-top: 2rem;
+          @include m-font();
+
+          .search-input {
+            position: relative;
+
+            @include mq (sp) {
+              width: 100%;
+            }
+
+            &::before {
+              position: absolute;
+              top: 50%;
+              left: 2rem;
+              width: 1.5rem;
+              height: 1.5rem;
+              background: url('#{$v-img-path}icon/icon_job_search.png') no-repeat center/contain;
+              content: '';
+              transform: translateY(-50%);
+            }
+
+            input {
+              width: 32.5rem;
+              padding: 2rem 1rem 2rem 5rem;
+              border: none;
+              background-color: $color12;
+              outline: none;
+              border-radius: 1rem;
+
+              @include mq (sp) {
+                width: 100%;
+              }
             }
           }
 
-          label:before {
-            display: inline-block;
-            width: 1.4rem;
-            height: 1.4rem;
-            margin-right: 0.5rem;
-            border: 1px solid $color14;
-            vertical-align: middle;
-            content: '';
-            border-radius: 50%;
+          .total-jobs {
+            padding: 2rem 0 1rem;
+            font-size: 1.4rem;
+            font-weight: 700;
           }
-
-          input[type=checkbox]:checked+label:before {
-            border: 1px solid transparent;
-          }
-
-          input[type=checkbox]:checked+label:after {
-            display: block;
-            position: absolute;
-            top: 50%;
-            left: 1rem;
-            width: 1.6rem;
-            height: 1.6rem;
-            background: url('#{$v-img-path}icon/icon_modal_tick.png') no-repeat center/contain;
-            content: '';
-            transform: translateY(-50%);
-          }
-
-          input[type=checkbox]:checked+label {
-            border: 1px solid $color01;
-            color: $color01;
-          }
-
-        }
-      }
-
-      .form-btn {
-        display: flex;
-        justify-content: center;
-        width: 59%;
-        margin: 2rem auto 0;
-        font-size: 1.5rem;
-        font-weight: 700;
-        max-width: 80rem;
-        @include m-font();
-
-        @include mq (tab) {
-          width: 90%;
         }
 
-        @include mq (sp) {
-          flex-direction: column;
-          align-items: center;
-          width: 100%;
-        }
-
-        .set-categories,
-        .search-set {
+        .setting-categories,
+        .search-setting {
           display: inline-block;
           width: 26rem;
           padding: 1.2rem;
@@ -216,7 +359,7 @@ modal.css
           }
         }
 
-        .set-categories {
+        .setting-categories {
           position: relative;
           margin-right: 2%;
           border: 1px solid $color14;
@@ -237,7 +380,7 @@ modal.css
           }
         }
 
-        .search-set {
+        .search-setting {
           overflow: hidden;
           box-shadow: $m-btn-shadow;
           background-color: $color01;
@@ -246,6 +389,8 @@ modal.css
           -webkit-backface-visibility: hidden;
 
           &:hover {
+            opacity: 1;
+
             &::before {
               transform: scale(1, 1);
               transform-origin: left top;
@@ -272,37 +417,8 @@ modal.css
 }
 
 .modal-close-btn {
-  @include m-absolute($top: 0.5em, $right: 0.5em);
-
-  @include mq() {
-    top: 1.2em;
-    right: 3.2em;
-
-    .svg-icon {
-      width: 4em;
-    }
-  }
-
-  i {
-    color: $black;
-    font-size: 2em;
-  }
-
-  .svg-icon {
-    width: 3em;
-  }
-}
-
-.modal-footer {
-  padding: 1em 0;
-  border-top: 1px solid $black221;
-
-  @include mq(sp) {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 10vh;
-    background: $white;
-    max-height: 7rem;
-  }
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
 }

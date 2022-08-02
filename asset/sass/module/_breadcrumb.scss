@@ -1,3 +1,59 @@
 /* ========================================================
 breadcrumb
 ======================================================== */
+.breadcrumb-inner {
+  position: absolute;
+  top: 14.5rem;
+  padding: 0 16.4rem;
+
+  @include mq(laptop_sp) {
+    top: 7rem;
+    padding: 0 8.4rem;
+  }
+
+  @include mq(sp) {
+    position: relative;
+    top: 0;
+    margin-bottom: 4rem;
+    padding: 0 2.6rem;
+  }
+
+  .breadcrumb-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      position: relative;
+      line-height: 1.2;
+      margin: 0.5rem 1rem 0.5rem 0;
+      padding-right: 2.2rem;
+      font-size: 1.3rem;
+      font-weight: 400;
+      @include m-font();
+
+      &::after {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 0.7rem;
+        height: 1rem;
+        background: url('#{$v-img-path}icon/icon_breadcrumb_arr.png') no-repeat center/contain;
+        content: '';
+        transform: translateY(-50%);
+      }
+
+      &:last-child {
+        &::after {
+          background: none;
+        }
+      }
+
+      a {
+        color: $color01;
+        font-weight: 700;
+        text-decoration: underline;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

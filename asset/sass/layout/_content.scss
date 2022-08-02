@@ -283,3 +283,161 @@ content.css
     }
   }
 }
+
+/* Recommend content
+-------------------------------------------------------- */
+#rcmd-page .sec-rcmd-job {
+  margin-top: 0;
+  padding-top: 8rem;
+
+  @include mq(sp) {
+    padding-top: 3.8rem;
+  }
+}
+
+.sec-rcmd-job {
+  margin-top: 10rem;
+  padding-top: 10.3rem;
+  padding-bottom: 7.2rem;
+  background-color: $color12;
+
+  @include mq(sp) {
+    margin-top: 0;
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+
+    .sec-ttl {
+      margin-bottom: 3rem;
+
+      .main-ttl {
+        display: inline-block;
+
+        &::before,
+        &::after {
+          width: 3rem;
+          height: 5.4rem;
+        }
+      }
+    }
+  }
+
+  .rcmd-col-blk {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 107rem;
+
+    .rcmd-col {
+      width: 31.5%;
+      line-height: 1.65;
+      margin-bottom: 2.7rem;
+      border: 1px solid $color14;
+      background-color: $white;
+      font-size: 1.4rem;
+      border-radius: 1.4rem;
+      @include m-font();
+
+      @include mq(sp) {
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+
+      .rcmd-top {
+        padding: 3rem 2.5rem 1rem;
+
+        .rcmd-ttl {
+          font-size: 1.8rem;
+          font-weight: 700;
+          @include m-font();
+        }
+
+        .info {
+          padding-top: 1.5rem;
+        }
+
+        .rcmd-content {
+          padding-top: 0.7rem;
+        }
+
+        .tag-gp {
+          display: flex;
+          flex-wrap: wrap;
+          padding-top: 1.2rem;
+
+          .tag {
+            margin: 0 0.6rem 0.6rem 0;
+            padding: 0.2rem 0.6rem;
+            border: 1px solid $color01;
+            color: $color01;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 0.4rem;
+          }
+        }
+      }
+
+      .rcmd-link,
+      .rcmd-sub-ttl {
+        line-height: 1.5;
+        color: $color07;
+        font-weight: 700;
+      }
+
+      .rcmd-sub-ttl {
+        font-size: 1.5rem;
+      }
+
+      .blue-txt {
+        color: $color01;
+      }
+
+      .rcmd-bottom {
+        padding: 1.8rem 2.5rem 0.8rem;
+        border-top: 1px solid $color14;
+
+        .rcmd-btn-gp {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          align-items: center;
+        }
+
+        .rcmd-link {
+          position: relative;
+          margin-bottom: 1rem;
+          padding-left: 2.6rem;
+          font-size: 1.8rem;
+
+          &::before {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            content: '';
+            transform: translateY(-50%);
+          }
+
+          &.rcmd-fav-btn {
+            &::before {
+              width: 1.8rem;
+              height: 1.7rem;
+              background: url('#{$v-img-path}icon/icon_rcmd_fav.png') no-repeat center/contain;
+            }
+          }
+
+          &.rcmd-detail-btn {
+            &::before {
+              width: 1.9rem;
+              height: 1.9rem;
+              background: url('#{$v-img-path}icon/icon_rcmd_arr.png') no-repeat center/contain;
+            }
+          }
+
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+  }
+}

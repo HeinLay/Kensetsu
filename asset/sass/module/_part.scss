@@ -2,17 +2,293 @@
  common parts styles
 ======================================================== */
 
-/* slick
+/* Section Title
 -------------------------------------------------------- */
+.sec-ttl {
+  line-height: 1.21;
+  margin-bottom: 4rem;
+  color: $color07;
+  font-size: 2.6rem;
+  font-weight: 700;
+  text-align: center;
+  @include m-font();
 
+  @include mq(sp) {
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+  }
 
-/* btn
+  @include mq(sp_min) {
+    font-size: 2rem;
+  }
+
+  .main-ttl {
+    position: relative;
+    padding: 0 4rem;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      width: 2.1rem;
+      height: 3.5rem;
+      background: url('#{$v-img-path}icon/img_sec_ttl.png') no-repeat center/contain;
+      content: '';
+      transform: translateY(-50%);
+
+      @include mq(sp) {
+        width: 2.1rem;
+        height: 3.4rem;
+      }
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+  }
+}
+
+/* Button Common
 -------------------------------------------------------- */
+.register-btn {
+  display: flex;
+  position: relative;
+  align-items: center;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0.5rem 1.3rem 0.5rem .4rem;
+  box-shadow: $l-btn-shadow;
+  background-color: $color08;
+  color: $white;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  outline: 2px solid $color08;
+  -webkit-transform: translate3d(0, 0, 0);
+  transition: all ease 0.6s;
+  max-width: 30.5rem;
+  border-radius: 2.9rem;
+  -webkit-backface-visibility: hidden;
+  @include m-font();
 
+  @include mq (tab) {
+    font-size: 1.66vw;
+    letter-spacing: 0.4rem;
+  }
 
-/* headding
+  @include mq (sp) {
+    margin: 1rem auto 0;
+    padding: 0.5rem 1.3rem 0.5rem 0.4rem;
+    font-size: 1.7rem;
+    letter-spacing: 0.1rem;
+  }
+
+  @include mq(sp_min) {
+    font-size: 1.5rem;
+  }
+
+  &:hover {
+    color: $color08;
+
+    &::before {
+      transform: scale(1, 1);
+      transform-origin: left top;
+    }
+
+    .second-circle {
+      background-color: $color08;
+      color: $white;
+    }
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: $white;
+    content: '';
+    transform: scale(0, 1);
+    transform-origin: right top;
+    transition: transform 0.6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+  }
+
+  .second-circle {
+    display: inline-block;
+    width: 4.6rem;
+    height: 4.6rem;
+    margin-right: 1rem;
+    padding-top: 1.5rem;
+    background-color: $white;
+    color: $color08;
+    font-size: 1.2rem;
+    text-align: center;
+    letter-spacing: 0;
+    border-radius: 50%;
+
+    @include mq (sp) {
+      width: 4.8rem;
+      height: 4.8rem;
+      margin-right: 0.9rem;
+      padding-top: 1.7rem;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.search-btn {
+  position: relative;
+  width: 24%;
+  overflow: hidden;
+  padding: 1.5rem 0;
+  border: none;
+  box-shadow: $l-btn-shadow;
+  background-color: $color01;
+  color: $white;
+  font-size: 1.6rem;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-transform: translate3d(0, 0, 0);
+  transition: all ease 0.6s;
+  border-radius: 2.9rem;
+  -webkit-backface-visibility: hidden;
+  @include m-font();
+
+  @include mq (sp) {
+    width: 18.4rem;
+    margin: 3rem auto 4rem;
+    padding: 1rem 0;
+  }
+
+  &:hover {
+    &::before {
+      transform: scale(1, 1);
+      transform-origin: left top;
+    }
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: $color04;
+    content: '';
+    transform: scale(0, 1);
+    transform-origin: right top;
+    transition: transform 0.6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+  }
+}
+
+.list-btn {
+  display: block;
+  position: relative;
+  width: 26.8rem;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 1.4rem 0;
+  color: $color01;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  outline: 1px solid $color01;
+  -webkit-transform: translate3d(0, 0, 0);
+  transition: all ease 0.6s;
+  border-radius: 2.9rem;
+  -webkit-backface-visibility: hidden;
+  @include m-font();
+
+  @include mq(sp) {
+    width: 18.3rem;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: $color01;
+    content: '';
+    transform: scale(0, 1);
+    transform-origin: right top;
+    transition: transform .6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+  }
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    right: 2.2rem;
+    width: 0.8rem;
+    height: 1rem;
+    background: url('#{$v-img-path}icon/icon_list_btn.png') no-repeat center/contain;
+    content: '';
+    transform: translateY(-50%);
+    transition: all ease 0.6s;
+  }
+
+  &:hover {
+    color: $white;
+
+    &::before {
+      transform: scale(1, 1);
+      transform-origin: left top;
+    }
+
+    &::after {
+      background: url('#{$v-img-path}icon/icon_list_btn_hover.png') no-repeat center/contain;
+    }
+  }
+
+}
+
+/* Sub Page Heading
 -------------------------------------------------------- */
+.sub-pg-mv {
+  position: relative;
+  padding: 10rem 0 8.5rem;
+  background-color: $color12;
+  border-bottom: 1px solid $color14;
+  @include m-font();
 
+  @include mq(sp) {
+    padding: 5rem 0 3.8rem;
+  }
+
+  &::after {
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 7.9rem;
+    height: 0.4rem;
+    background: url('#{$v-img-path}/icon/img_ttl.png') no-repeat center/contain;
+    content: '';
+    transform: translateX(-50%);
+
+    @include mq(sp) {
+      width: 7.4rem;
+    }
+  }
+
+  .sub-pg-ttl {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+
+    @include mq(sp) {
+      font-size: 2.2rem;
+    }
+  }
+}
 
 /* section parts
 -------------------------------------------------------- */

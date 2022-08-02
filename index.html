@@ -9,7 +9,7 @@
   <meta name="theme-color" content="#dc0610">
   <meta name="description" content="●●●">
   <link rel="canonical" href="https://kensetsu.webpre.net/">
-  <title>トップページ｜【テストページ】リソシア 建設転職ナビ</title>
+  <title>トップページ｜リソシア 建設転職ナビ</title>
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://kensetsu.webpre.net/" />
   <meta property="og:site_name" content="●●●" />
@@ -75,11 +75,11 @@
             <div class="total-posted">本日の掲載求人<span class="total-num">30,150</span><span class="total-case">件</span></div>
             <span class="date">2022年07月11日更新</span>
             <a href="#" class="register-btn"><span class="second-circle">60秒で完了</span>無料転職支援サービス登録</a>
-            <a href="#" class="guide-btn"><span><img src="./asset/img/icon/icon_guide.png" alt="初めての方へ" width="16" height="20" loading="lazy"></span>初めての方へ</a>
+            <a href="#" data-modal="change-search-form" class="jsModalOpen guide-btn"><span><img src="./asset/img/icon/icon_guide.png" alt="初めての方へ" width="16" height="20" loading="lazy"></span>初めての方へ</a>
           </div>
         </div>
       </div>
-    </div> <!-- /.mainvisual -->
+    </div><!-- /.mainvisual -->
     <section class="sec-benefits">
       <h2 class="sec-ttl"><span class="main-ttl">建設転職ナビの<br class="s-sp"><span class="benefits-txt">4つのメリット</span></span></h2>
       <div class="sec-full">
@@ -124,15 +124,15 @@
     <div class="sec-search-box">
       <div class="sec-full">
         <ul class="search-category">
-          <li><a href="#" class="jsModalOpen" data-target="occupation-form"><span><img src="asset/img/icon/icon_bag.png" alt="職種" width="22" height="19" loading="lazy"></span>職種<span class="select-cat ">選択中</span></a></li>
-          <li><a href="#" class="jsModalOpen" data-target="occupation-form"><span><img src="asset/img/icon/icon_location.png" alt="地域" width="17" height="23" loading="lazy"></span>地域<span class="select-cat">選択中</span></a></li>
-          <li><a href="#" class="active jsModalOpen" data-target="occupation-form"><span><img src="asset/img/icon/icon_reward.png" alt="資格" width="17" height="24" loading="lazy"></span>資格<span class="select-cat active">選択中</span></a></li>
-          <li><a href="#" class="jsModalOpen" data-target="occupation-form"><span><img src="asset/img/icon/icon_yen.png" alt="年収" width="19" height="19" loading="lazy"></span>年収<span class="select-cat">選択中</span></a></li>
-          <li><a href="#" class="active jsModalOpen" data-target="occupation-form"><span><img src="asset/img/icon/icon_tag.png" alt="こだわり" width="21" height="20" loading="lazy"></span>こだわり<span class="select-cat active">選択中</span></a></li>
+          <li><a href="javascript:void(0);" class="jsModalOpen" data-modal="occupation-form"><span><img src="asset/img/icon/icon_bag.png" alt="職種" width="22" height="19" loading="lazy"></span>職種<span class="select-cat ">選択中</span></a></li>
+          <li><a href="javascript:void(0);" class="jsModalOpen" data-modal="occupation-form"><span><img src="asset/img/icon/icon_location.png" alt="地域" width="17" height="23" loading="lazy"></span>地域<span class="select-cat">選択中</span></a></li>
+          <li><a href="javascript:void(0);" class="active jsModalOpen" data-modal="occupation-form"><span><img src="asset/img/icon/icon_reward.png" alt="資格" width="17" height="24" loading="lazy"></span>資格<span class="select-cat active">選択中</span></a></li>
+          <li><a href="javascript:void(0);" class="jsModalOpen" data-modal="occupation-form"><span><img src="asset/img/icon/icon_yen.png" alt="年収" width="19" height="19" loading="lazy"></span>年収<span class="select-cat">選択中</span></a></li>
+          <li><a href="javascript:void(0);" class="active jsModalOpen" data-modal="occupation-form"><span><img src="asset/img/icon/icon_tag.png" alt="こだわり" width="21" height="20" loading="lazy"></span>こだわり<span class="select-cat active">選択中</span></a></li>
         </ul>
         <div class="search-bar">
           <input type="text" class="search-input" placeholder="社名や業種などキーワードから検索">
-          <button class="search-btn">検索する</button>
+          <button class="search-btn jsModalOpen" data-modal="search-conditions">検索する</button>
         </div>
       </div>
     </div><!-- /.sec-search-box -->
@@ -198,6 +198,7 @@
             </a>
           </li>
         </ul>
+        <a href="#" class="list-btn">一覧へ</a>
       </div>
     </section><!-- /.sec-recruit-feature -->
     <!-- =============== Service Content ============== -->
@@ -429,7 +430,7 @@
             </a>
           </li>
         </ul>
-        <a href="#" class="list-btn">一覧へ</a>
+        <a href="recommend.html" class="list-btn">一覧へ</a>
       </div>
     </section><!-- /.sec-recmd-feature -->
     <section class="sec-news">
@@ -463,7 +464,7 @@
         </ul>
         <a href="#" class="list-btn">一覧へ</a>
       </div>
-    </section><!-- /.sec-news-->
+    </section><!-- /.sec-news -->
     <section class="sec-const-news">
       <div class="sec-full">
         <h2 class="sec-ttl"><span class="main-ttl">建設技術者向けNEWS</span></h2>
@@ -495,7 +496,7 @@
         </ul>
         <a href="#" class="list-btn">一覧へ</a>
       </div>
-    </section><!-- /.sec-const-news-->
+    </section><!-- /.sec-const-news -->
     <section class="sec-const">
       <div class="grey-box">
         <div class="txt-box">
@@ -509,24 +510,32 @@
           <img src="asset/img/top/img_construction.png" alt="建設転職ナビとは？" width="551" height="332" loading="lazy">
         </div>
       </div>
-    </section><!-- /.sec-const-->
+    </section><!-- /.sec-const -->
+    <div class="btn-list">
+      <div class="sec-full">
+        <a href="#" class="app-regist-btn">60秒で簡単登録応募</a>
+        <a href="#" class="beginner-guide-btn"><span><img src="./asset/img/icon/icon_guide.png" alt="初めての方へ" width="16" height="19" loading="lazy"></span>初めての方へ</a>
+      </div>
+    </div><!-- /.btn-list -->
     <!-- =============== Guide Search ============== -->
     <!--#include FILE="include/guide_search.html"-->
     <div id="occupation-form" class="modal jsModal">
       <div class="modal-bg jsModalClose"></div>
       <div class="modal-content">
         <div class="modal-panel">
-          <a href="javascript:void(0)" class="modal-close-btn jsModalClose">
-            <img src="./asset/img/icon/icon_modal_close.png" alt="" width="28" height="28" loading="lazy">
-          </a>
           <div class="modal-ttl">
-            職種
+            <div>
+              <span class="search-conditions-ttl">職 種</span>
+              <a href="javascript:void(0);" class="modal-close-btn jsModalClose">
+                <img src="./asset/img/icon/icon_modal_close.png" alt="" width="28" height="28" loading="lazy">
+              </a>
+            </div>
           </div>
           <div class="modal-txt">
-            <div class="form-content form-modal">
-              <ul class="form-row">
+            <div class="form-modal">
+              <ul class="occupation-form-row">
                 <li class="checkbox-group">
-                  <input type="checkbox" id="construction-design">
+                  <input type="checkbox" id="construction-design" checked>
                   <label for="construction-design">建設設計</label>
                 </li>
                 <li class="checkbox-group">
@@ -578,15 +587,231 @@
                   <label for="construction-design-thirteen">建設設計</label>
                 </li>
               </ul>
-              <div class="form-btn">
-                <a href="#" class="set-categories">設定する <span></span></a>
-                <a href="#" class="search-set">この条件で検索する</a>
+              <div class="occupation-form-btn">
+                <a href="#" class="setting-categories">設定する <span></span></a>
+                <a href="#" class="search-setting">この条件で検索する</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div><!-- /.modal-->
+    </div><!-- /#occupation-form -->
+    <div id="search-conditions" class="modal jsModal">
+      <div class="modal-bg jsModalClose"></div>
+      <div class="modal-content">
+        <div class="modal-panel">
+          <div class="modal-ttl">
+            <div>
+              <span class="search-conditions-ttl">検索条件変更</span>
+              <span class="search-clear"><a href="javascript:void(0);">全てクリア</a></span>
+              <a href="javascript:void(0);" class="modal-close-btn jsModalClose">
+                <img src="./asset/img/icon/icon_modal_close.png" alt="" width="28" height="28" loading="lazy">
+              </a>
+            </div>
+          </div>
+          <div class="modal-txt">
+            <div class="form-modal">
+              <ul class="search-conditions-form">
+                <li class="search-condition">
+                  <a href="javascript:void(0);" class="jsModalOpen search-list active" data-modal="search-occupation">
+                    <div class="cat-icon">
+                      <img src="./asset/img/icon/icon_bag.png" alt="職種" width="16" height="13" loading="lazy">
+                      <span>職種</span>
+                    </div>
+                    <span class="cat-txt">建築設計、構造設計、土木設計、</span>
+                  </a>
+                </li>
+                <li class="search-condition">
+                  <a href="javascript:void(0);" class="jsModalOpen search-list active" data-modal="search-occupation">
+                    <div class="cat-icon">
+                      <img src="./asset/img/icon/icon_location.png" alt="地域" width="12" height="15" loading="lazy">
+                      <span>地域</span>
+                    </div>
+                    <span class="cat-txt">関東全域</span>
+                  </a>
+                </li>
+                <li class="search-condition">
+                  <a href="javascript:void(0);" class="jsModalOpen search-list active" data-modal="search-occupation">
+                    <div class="cat-icon">
+                      <img src="./asset/img/icon/icon_reward.png" alt="資格" width="12" height="16" loading="lazy">
+                      <span>資格</span>
+                    </div>
+                    <span class="cat-txt">一級建築士、二級建築士、</span>
+                  </a>
+                </li>
+                <li class="search-condition">
+                  <a href="javascript:void(0);" class="jsModalOpen search-list active" data-modal="search-occupation">
+                    <div class="cat-icon">
+                      <img src="./asset/img/icon/icon_yen.png" alt="年収" width="14" height="14" loading="lazy">
+                      <span>年収</span>
+                    </div>
+                    <span class="cat-txt">~299万、</span>
+                  </a>
+                </li>
+                <li class="search-condition">
+                  <a href="javascript:void(0);" class="jsModalOpen search-list" data-modal="search-occupation">
+                    <div class="cat-icon">
+                      <img src="./asset/img/icon/icon_tag.png" alt="こだわり" width="13" height="13" loading="lazy">
+                      <span>こだわり</span>
+                    </div>
+                    <span class="cat-txt">未選択</span>
+                  </a>
+                </li>
+              </ul>
+              <div class="search-field">
+                <div class="search-input">
+                  <input type="text" placeholder="社名や業種などキーワードから検索">
+                </div>
+                <span class="total-jobs">該当求人数 930,150件</span>
+                <a href="#" class="search-setting">この条件で検索する</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /#search-conditions -->
+    <div id="search-occupation" class="modal jsModal">
+      <div class="modal-bg jsModalClose"></div>
+      <div class="modal-content">
+        <div class="modal-panel">
+          <div class="modal-ttl">
+            <div>
+              <span class="search-conditions-ttl">職種から探す</span>
+              <a href="javascript:void(0);" class="modal-close-btn jsModalClose">
+                <img src="./asset/img/icon/icon_modal_close.png" alt="" width="28" height="28" loading="lazy">
+              </a>
+            </div>
+          </div>
+          <div class="modal-txt">
+            <div class="form-modal">
+              <ul class="occupation-form-row">
+                <li class="checkbox-group active">
+                  <input type="checkbox" id="job-title" checked>
+                  <label for="job-title">建設設計</label>
+                </li>
+                <li class="checkbox-group">
+                  <input type="checkbox" id="job-title-two">
+                  <label for="job-title-two">意匠設計</label>
+                </li>
+                <li class="checkbox-group">
+                  <input type="checkbox" id="job-title-three">
+                  <label for="job-title-three">職種名職種名</label>
+                </li>
+                <li class="checkbox-group">
+                  <input type="checkbox" id="job-title-four">
+                  <label for="job-title-four">職種名職種名</label>
+                </li>
+                <li class="checkbox-group">
+                  <input type="checkbox" id="job-title-five">
+                  <label for="job-title-five">職種名職種名</label>
+                </li>
+                <li class="checkbox-group">
+                  <input type="checkbox" id="job-title-six">
+                  <label for="job-title-six">職種名職種名</label>
+                </li>
+                <li class="checkbox-group">
+                  <input type="checkbox" id="job-title-seven">
+                  <label for="job-title-seven">職種名職種名</label>
+                </li>
+                <li class="checkbox-group">
+                  <input type="checkbox" id="job-title-eight">
+                  <label for="job-title-eight">職種名職種名</label>
+                </li>
+                <li class="checkbox-group">
+                  <input type="checkbox" id="job-title-nine">
+                  <label for="job-title-nine">職種名職種名</label>
+                </li>
+                <li class="checkbox-group">
+                  <input type="checkbox" id="job-title-ten">
+                  <label for="job-title-ten">職種名職種名</label>
+                </li>
+                <li class="checkbox-group">
+                  <input type="checkbox" id="job-title-eleven">
+                  <label for="job-title-eleven">職種名職種名</label>
+                </li>
+                <li class="checkbox-group">
+                  <input type="checkbox" id="job-title-twelve">
+                  <label for="job-title-twelve">職種名職種名</label>
+                </li>
+                <li class="checkbox-group">
+                  <input type="checkbox" id="job-title-thirteen">
+                  <label for="job-title-thirteen">職種名職種名</label>
+                </li>
+              </ul>
+              <div class="occupation-form-btn">
+                <a href="#" class="setting-categories">設定する <span></span></a>
+                <div class="total-jobs-search">
+                  <span>該当求人数 930,150件</span>
+                  <a href="#" class="search-setting">この条件で検索する</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /#search-occupation -->
+    <div id="change-search-form" class="modal jsModal">
+      <div class="modal-bg jsModalClose"></div>
+      <div class="modal-content">
+        <div class="modal-panel">
+          <div class="modal-ttl">
+            <div>
+              <span class="search-conditions-ttl">検索条件変更</span>
+              <span class="search-clear"><a href="javascript:void(0);">全てクリア</a></span>
+              <a href="javascript:void(0);" class="modal-close-btn jsModalClose">
+                <img src="./asset/img/icon/icon_modal_close.png" alt="" width="28" height="28" loading="lazy">
+              </a>
+            </div>
+          </div>
+          <div class="modal-txt">
+            <div class="form-modal">
+              <ul class="search-conditions-form">
+                <li class="search-condition">
+                  <a href="javascript:void(0);" class="jsModalOpen search-list active" data-modal="search-occupation">
+                    <div class="cat-icon">
+                      <img src="./asset/img/icon/icon_bag.png" alt="職種" width="16" height="13" loading="lazy">
+                      <span>職種</span>
+                    </div>
+                    <span class="cat-txt">建築設計、構造設計、土木設計、</span>
+                  </a>
+                </li>
+                <li class="search-condition">
+                  <a href="javascript:void(0);" class="jsModalOpen search-list active" data-modal="search-occupation">
+                    <div class="cat-icon">
+                      <img src="./asset/img/icon/icon_location.png" alt="地域" width="12" height="15" loading="lazy">
+                      <span>地域</span>
+                    </div>
+                    <span class="cat-txt">関東全域</span>
+                  </a>
+                </li>
+                <li class="search-condition">
+                  <a href="javascript:void(0);" class="jsModalOpen search-list active" data-modal="search-occupation">
+                    <div class="cat-icon">
+                      <img src="./asset/img/icon/icon_reward.png" alt="資格" width="12" height="16" loading="lazy">
+                      <span>資格</span>
+                    </div>
+                    <span class="cat-txt">一級建築士、二級建築士、</span>
+                  </a>
+                </li>
+                <li class="search-condition">
+                  <a href="javascript:void(0);" class="jsModalOpen search-list active" data-modal="search-occupation">
+                    <div class="cat-icon">
+                      <img src="./asset/img/icon/icon_yen.png" alt="年収" width="14" height="14" loading="lazy">
+                      <span>年収</span>
+                    </div>
+                    <span class="cat-txt">~299万、</span>
+                  </a>
+                </li>
+              </ul>
+              <div class="search-field">
+                <span class="total-jobs">該当求人数 930,150件</span>
+                <a href="#" class="search-setting">この条件で検索する</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /#change-search-form -->
   </main>
   <!-- =============== footer ============== -->
   <!--#include FILE="include/footer.html"-->
