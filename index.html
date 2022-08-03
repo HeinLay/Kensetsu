@@ -64,7 +64,7 @@
   <!-- ===============  header ============== -->
   <!--#include FILE="include/header.html"-->
   <main class="content">
-    <div class="mainvisual">
+    <div class="mainvisual s-d-hidden">
       <div class="mv-blk sec-full">
         <div class="mv-txt-img">
           <h1 class="top-ttl">
@@ -80,7 +80,7 @@
         </div>
       </div>
     </div><!-- /.mainvisual -->
-    <section class="sec-benefits">
+    <section class="sec-benefits s-d-hidden">
       <h2 class="sec-ttl"><span class="main-ttl">建設転職ナビの<br class="s-sp"><span class="benefits-txt">4つのメリット</span></span></h2>
       <div class="sec-full">
         <ul class="merit-blk">
@@ -123,12 +123,16 @@
     </section><!-- /.sec-benefits -->
     <div class="sec-search-box">
       <div class="sec-full">
+        <div class="search-ttl-blk">
+          <div class="total-posted">本日の掲載求人<span class="total-num">30,150</span><span class="total-case">件</span></div>
+          <span class="date">2022年07月11日更新</span>
+        </div>
         <ul class="search-category">
-          <li><a href="javascript:void(0);" class="jsModalOpen" data-modal="occupation-form"><span><img src="asset/img/icon/icon_bag.png" alt="職種" width="22" height="19" loading="lazy"></span>職種<span class="select-cat ">選択中</span></a></li>
-          <li><a href="javascript:void(0);" class="jsModalOpen" data-modal="occupation-form"><span><img src="asset/img/icon/icon_location.png" alt="地域" width="17" height="23" loading="lazy"></span>地域<span class="select-cat">選択中</span></a></li>
-          <li><a href="javascript:void(0);" class="active jsModalOpen" data-modal="occupation-form"><span><img src="asset/img/icon/icon_reward.png" alt="資格" width="17" height="24" loading="lazy"></span>資格<span class="select-cat active">選択中</span></a></li>
-          <li><a href="javascript:void(0);" class="jsModalOpen" data-modal="occupation-form"><span><img src="asset/img/icon/icon_yen.png" alt="年収" width="19" height="19" loading="lazy"></span>年収<span class="select-cat">選択中</span></a></li>
-          <li><a href="javascript:void(0);" class="active jsModalOpen" data-modal="occupation-form"><span><img src="asset/img/icon/icon_tag.png" alt="こだわり" width="21" height="20" loading="lazy"></span>こだわり<span class="select-cat active">選択中</span></a></li>
+          <li><a href="javascript:void(0);" class="jsModalOpen" data-modal="occupation-form"><span><img src="asset/img/icon/icon_bag.png" alt="職種" width="22" height="23" loading="lazy"></span>職種<span class="select-cat ">選択中</span></a></li>
+          <li><a href="javascript:void(0);" class="jsModalOpen" data-modal="occupation-form"><span><img src="asset/img/icon/icon_location.png" alt="地域" width="22" height="23" loading="lazy"></span>地域<span class="select-cat">選択中</span></a></li>
+          <li><a href="javascript:void(0);" class="active jsModalOpen" data-modal="occupation-form"><span><img src="asset/img/icon/icon_reward.png" alt="資格" width="22" height="23" loading="lazy"></span>資格<span class="select-cat active">選択中</span></a></li>
+          <li><a href="javascript:void(0);" class="jsModalOpen" data-modal="occupation-form"><span><img src="asset/img/icon/icon_yen.png" alt="年収" width="22" height="23" loading="lazy"></span>年収<span class="select-cat">選択中</span></a></li>
+          <li><a href="javascript:void(0);" class="active jsModalOpen" data-modal="occupation-form"><span><img src="asset/img/icon/icon_tag.png" alt="こだわり" width="22" height="23" loading="lazy"></span>こだわり<span class="select-cat active">選択中</span></a></li>
         </ul>
         <div class="search-bar">
           <input type="text" class="search-input" placeholder="社名や業種などキーワードから検索">
@@ -136,6 +140,7 @@
         </div>
       </div>
     </div><!-- /.sec-search-box -->
+    <a href="#" class="rcmd-job-btn">あなたにおすすめの求人情報はこちら</a>
     <section class="sec sec-recruit-feature">
       <div class="sec-full">
         <h2 class="sec-ttl"><span class="main-ttl">求人特集</span></h2>
@@ -198,7 +203,7 @@
             </a>
           </li>
         </ul>
-        <a href="#" class="list-btn">一覧へ</a>
+        <a href="sp-campaign.html" class="list-btn">一覧へ</a>
       </div>
     </section><!-- /.sec-recruit-feature -->
     <!-- =============== Service Content ============== -->
@@ -511,12 +516,14 @@
         </div>
       </div>
     </section><!-- /.sec-const -->
-    <div class="btn-list">
+    <div class="btn-list s-d-hidden">
       <div class="sec-full">
         <a href="#" class="app-regist-btn">60秒で簡単登録応募</a>
         <a href="#" class="beginner-guide-btn"><span><img src="./asset/img/icon/icon_guide.png" alt="初めての方へ" width="16" height="19" loading="lazy"></span>初めての方へ</a>
       </div>
     </div><!-- /.btn-list -->
+    <!-- =============== Guide Search ============== -->
+    <!--#include FILE="include/parts-recommend.html"-->
     <!-- =============== Guide Search ============== -->
     <!--#include FILE="include/guide_search.html"-->
     <div id="occupation-form" class="modal jsModal">

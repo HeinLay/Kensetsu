@@ -290,12 +290,12 @@ header.css
 }
 
 .cust-name {
+  line-height: 1.2;
   color: $color10;
   font-size: 1.2rem;
   font-weight: 400;
   text-align: right;
   @include m-font();
-  line-height: 1.2;
 
   span {
     padding: 0 1.2rem 0 0.6rem;
@@ -399,8 +399,6 @@ header.css
       }
     }
   }
-
-
 
   .header-list {
     padding: 1.7rem 0 3rem;

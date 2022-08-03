@@ -3,6 +3,45 @@
 ======================================================== */
 /* mainvisual
 -------------------------------------------------------- */
+.total-posted {
+  padding-bottom: 0.9rem;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  @include m-font();
+
+  @include mq (tab) {
+    font-size: 1.660vw;
+  }
+
+  .total-num {
+    display: inline-block;
+    padding-left: 1.2rem;
+    font-size: 3.8rem;
+    font-weight: 700;
+    vertical-align: text-bottom;
+    @include m-font1();
+
+    @include mq (tab) {
+      font-size: 3.711vw;
+    }
+  }
+
+  .total-num,
+  .total-case {
+    color: $color01;
+  }
+}
+
+.date {
+  padding-bottom: 1.5rem;
+  color: $color07;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  @include m-font();
+}
+
 .mainvisual {
   width: 100%;
   height: 34.7rem;
@@ -71,40 +110,7 @@
       transform: translateX(-50%);
     }
 
-    .total-posted {
-      padding-bottom: 0.9rem;
-      font-size: 1.7rem;
-      font-weight: 700;
-      letter-spacing: 0.1rem;
-      @include m-font();
 
-      @include mq (tab) {
-        font-size: 1.660vw;
-      }
-
-      .total-num {
-        font-size: 3.8rem;
-        font-weight: 700;
-        @include m-font1();
-
-        @include mq (tab) {
-          font-size: 3.711vw;
-        }
-      }
-
-      .total-num,
-      .total-case {
-        color: $color01;
-      }
-    }
-
-    .date {
-      padding-bottom: 1.5rem;
-      color: $color07;
-      font-size: 1rem;
-      font-weight: 400;
-      @include m-font();
-    }
 
     .guide-btn {
       display: flex;
@@ -161,6 +167,50 @@
       span {
         padding-right: 0.5rem;
       }
+    }
+  }
+}
+
+/* recommend Button
+-------------------------------------------------------- */
+.rcmd-job-btn {
+  display: block;
+  position: relative;
+  margin: 3.9rem auto 0;
+  padding: 2.9rem 4.8rem;
+  background: url('#{$v-img-path}top/img_rcmd_btn_bg.png') no-repeat center/cover;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  max-width: 52rem;
+  border-radius: 1.4rem;
+  @include m-font();
+
+  @include mq(sp) {
+    margin: 3.5rem auto 0;
+    padding: 3rem 2.3rem;
+    font-size: 1.6rem;
+    text-align: left;
+    max-width: 34.5rem;
+  }
+
+  @include mq(sp_min) {
+    font-size: 1.2rem;
+  }
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    right: 2.8rem;
+    width: 2rem;
+    height: 2rem;
+    background: url('#{$v-img-path}icon/icon_media_arr.png') no-repeat center/contain;
+    content: '';
+    transform: translateY(-50%);
+
+    @include mq(sp) {
+      right: 2rem;
     }
   }
 }
@@ -416,30 +466,61 @@
   .sec-full {
     max-width: 90rem;
 
+    .search-ttl-blk {
+      margin-top: -0.8rem;
+      padding-bottom: 3.6rem;
+      text-align: center;
+
+      @include mq (sp) {
+        margin-top: 0;
+        padding-bottom: 1.4rem;
+      }
+
+
+      .total-posted {
+        padding-bottom: 1.3rem;
+        font-size: 2.5rem;
+
+        @include mq (sp) {
+          padding-bottom: 1.1rem;
+          font-size: 1.7rem;
+        }
+
+        .total-num {
+          font-size: 5.2rem;
+
+          @include mq (sp) {
+            font-size: 3.8rem;
+          }
+        }
+
+      }
+    }
+
     .search-category {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
+      column-gap: 2rem;
+
+      @include mq (sp) {
+        column-gap: 1.5rem;
+      }
 
       li {
-        margin-right: 2rem;
-        margin-bottom: 2rem;
+        margin-bottom: 2.5rem;
 
         @include mq (sp) {
-          margin-right: 0.9rem;
-          margin-bottom: 1.2rem;
-        }
-
-        &:last-child {
-          margin-right: 0;
+          margin-bottom: 1rem;
         }
 
         a {
           display: inline-block;
           position: relative;
           width: 16.4rem;
-          padding: 2rem 1.7rem;
+          padding: 1.8rem 1.7rem 1.4rem;
+          border: 2px solid $white;
           box-shadow: $ui-shadow;
           background-color: $white;
           color: $color07;
@@ -454,9 +535,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 10rem;
-            padding: 1.9rem 0.7rem 1.4rem;
-            letter-spacing: 0;
+            width: 9.8rem;
+            padding: 1.6rem 0.7rem 1.2rem;
+            font-size: 1.4rem;
+            letter-spacing: 0.1rem;
           }
 
           span {
@@ -465,8 +547,8 @@
 
             @include mq (sp) {
               padding-right: 0;
-              padding-bottom: 1rem;
-              font-size: 1.4rem;
+              padding-bottom: 0.9rem;
+
             }
           }
 
@@ -485,8 +567,8 @@
         .select-cat {
           display: none;
           position: absolute;
-          top: -7.4%;
-          left: -3.2%;
+          top: -13.7%;
+          left: -4.2%;
           padding: 0.2rem 0.7rem;
           background-color: $color01;
           color: $white;
@@ -495,6 +577,7 @@
           border-radius: 2.9rem;
 
           @include mq (sp) {
+            top: -5.4%;
             font-size: 0.9rem;
           }
         }
@@ -516,13 +599,15 @@
 
       @include mq (sp) {
         flex-direction: column;
+        margin-top: 1.6rem;
       }
 
       .search-input {
         width: 73%;
-        padding: 2.1rem 1rem 1.7rem 6rem;
+        padding: 1.5rem 1rem 1.5rem 6rem;
         border: none;
         box-shadow: $ui-shadow;
+        font-size: 1.6rem;
         font-weight: 400;
         outline: none;
         border-radius: 1rem;
@@ -531,7 +616,7 @@
         @include mq (sp) {
           width: 93%;
           margin: 0 auto;
-          padding: 2.1rem 1rem 1.7rem 5rem;
+          padding: 1.5rem 1rem 1.5rem 4.9rem;
         }
       }
 
