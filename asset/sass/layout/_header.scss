@@ -121,7 +121,7 @@ header.css
         font-weight: 700;
         text-align: center;
         letter-spacing: 0.05rem;
-        border-bottom: 3px solid $white;
+        border-bottom: 3px solid transparent;
         @include m-font();
 
         &:hover,
@@ -200,6 +200,11 @@ header.css
           margin: 0 auto;
           padding: 0.8rem;
           background-color: $color01;
+          -webkit-transition: background-color 0.4s linear;
+          -moz-transition: background-color 0.4s linear;
+          -o-transition: background-color 0.4s linear;
+          -ms-transition: background-color 0.4s linear;
+          transition: background-color 0.4s linear;
           border-radius: 50%;
 
           @include mq(laptop_sp) {
@@ -489,7 +494,7 @@ header.css
     display: block;
     position: relative;
     margin: 0 auto;
-    padding: 2.9rem 4.8rem 2.9rem 1.5rem;
+    padding: 2.9rem 1.5rem;
     background: url('#{$v-img-path}icon/img_media_bg.png') no-repeat center/cover;
     color: $white;
     font-size: 1.6rem;

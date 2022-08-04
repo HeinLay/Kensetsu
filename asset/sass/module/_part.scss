@@ -1,7 +1,6 @@
 /* ========================================================
  common parts styles
 ======================================================== */
-
 /* Section Title
 -------------------------------------------------------- */
 .sec-ttl {
@@ -74,6 +73,11 @@
   border-radius: 2.9rem;
   -webkit-backface-visibility: hidden;
   @include m-font();
+
+  @supports (-webkit-hyphens:none) {
+    border: 1px solid $color08;
+    outline: none;
+  }
 
   @include mq (tab) {
     font-size: 1.66vw;
@@ -161,7 +165,7 @@
   @include m-font();
 
   @include mq (sp) {
-    width: 18.4rem;
+    width: 93%;
     margin: 2.5rem auto;
     padding: 1.4rem 0;
     font-size: 1.5rem;
@@ -207,6 +211,11 @@
   -webkit-backface-visibility: hidden;
   @include m-font();
 
+  @supports (-webkit-hyphens:none) {
+    border: 1px solid $color01;
+    outline: none;
+  }
+
   @include mq(sp) {
     width: 18.3rem;
   }
@@ -251,7 +260,6 @@
   }
 
 }
-
 
 /* Sub Page Heading
 -------------------------------------------------------- */
