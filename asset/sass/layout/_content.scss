@@ -287,7 +287,6 @@ content.css
 /* Recommend content
 -------------------------------------------------------- */
 #rcmd-page .sec-rcmd-job {
-  margin-top: 0;
   padding-top: 8rem;
 
   @include mq(sp) {
@@ -296,13 +295,11 @@ content.css
 }
 
 .sec-rcmd-job {
-  margin-top: 10rem;
   padding-top: 10.3rem;
   padding-bottom: 7.2rem;
   background-color: $color12;
 
   @include mq(sp) {
-    margin-top: 0;
     padding-top: 2.5rem;
     padding-bottom: 2rem;
 
@@ -440,4 +437,231 @@ content.css
       }
     }
   }
+}
+
+/* Career Change Service content
+-------------------------------------------------------- */
+.sec-services {
+  padding-top: 10rem;
+  background-color: $color12;
+  text-align: center;
+  @include m-font();
+
+  @include mq(sp) {
+    padding-top: 7rem;
+  }
+
+  .sec-ttl {
+    margin-bottom: 3rem;
+
+    @include mq(sp) {
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  .service-para {
+    width: 100%;
+    line-height: 1.7;
+    margin: 0 auto 4rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    max-width: 53.1rem;
+
+    @include mq(sp) {
+      margin-bottom: 2.3rem;
+      padding: 0 1.3rem;
+      text-align: left;
+    }
+  }
+
+  .service-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto 5.2rem;
+    max-width: 85.1rem;
+
+    @include mq(sp) {
+      margin: 0 auto 2.7rem;
+    }
+
+    li {
+      width: 21%;
+      margin-right: 5.3%;
+
+      @include mq(sp) {
+        width: 47%;
+        margin-right: 3%;
+        margin-bottom: 1.7rem;
+
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .service-txt {
+      padding-top: 1.6rem;
+      font-size: 1.6rem;
+      font-weight: 700;
+      @include mq(sp) {
+        line-height: 1.2;
+      }
+    }
+  }
+
+  .register-btn {
+    justify-content: center;
+    padding: 1.6rem 0;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    max-width: 34.5rem;
+
+    @include mq(sp) {
+      max-width: 32rem;
+    }
+  }
+}
+
+/* Job Description content
+-------------------------------------------------------- */
+.sec-job-desc {
+  background-color: $color12;
+
+
+  .job-offer-id {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .label-new {
+      display: block;
+      width: 3.8rem;
+      line-height: 1.4;
+      padding: 0.1rem 0.4rem;
+      background-color: $color08;
+      color: $white;
+      font-size: 1.3rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      border-radius: 0.4rem;
+      @include m-font1();
+      text-align: center;
+
+      @include mq (sp) {
+        line-height: 1.3;
+      }
+    }
+
+    .job-offer {
+      color: $color10;
+      font-size: 1.3rem;
+      font-weight: 400;
+      @include m-font();
+
+      @include mq (sp) {
+        font-size: 1.1rem;
+        letter-spacing: 0.07rem;
+      }
+    }
+  }
+
+  .occupation-txt {
+    display: block;
+    color: $color07;
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding: 0.9rem 0 1.8rem;
+    @include m-font();
+
+    @include mq (sp) {
+      font-size: 1.3rem;
+      line-height: 1.5;
+      padding: 0.6rem 0;
+    }
+  }
+
+  .location-txt {
+    display: block;
+    color: $color07;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.3;
+    @include m-font();
+
+    @include mq (sp) {
+      font-size: 2rem;
+      line-height: 1.4;
+    }
+  }
+
+  .amount-txt {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1.7rem 0 2rem;
+    @include m-font();
+
+    @include mq (sp) {
+      font-size: 1.3rem;
+      padding: 1rem 0;
+    }
+
+    span {
+      color: $color01;
+      padding-left: 0.7rem;
+
+      @include mq (sp) {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .tag-gp {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    border-top: 1px solid $color14;
+    padding-top: 2.3rem;
+
+    @include mq(sp) {
+      margin-top: 1.3rem;
+      padding-top: 2.1rem;
+      row-gap: 0.8rem;
+    }
+
+    li {
+      span {
+        margin-right: 0.7rem;
+        padding: 0.2rem 0.6rem;
+        border: 1px solid $color07;
+        background-color: $white;
+        color: $color07;
+        font-size: 1.4rem;
+        border-radius: 0.5rem;
+        display: inline-block;
+        @include m-font();
+        background-color: $white;
+        color: $color01;
+        border: 1px solid $color01;
+
+        @include mq(sp) {
+          margin-right: 0.4rem;
+          padding: 0.4rem 0.6rem;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
 }

@@ -209,3 +209,14 @@ $(function () {
     return false;
   });
 });
+
+// Button List
+var hdrHeight = $('.header-theme').outerHeight();
+var height = $('.sec-search-box').offset().top + hdrHeight;
+$(window).scroll(function () {
+  if ($(this).scrollTop() > height) {
+    $('.btn-list').fadeIn();
+  } else {
+    $('.btn-list').fadeOut();
+  }
+});
