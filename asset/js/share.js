@@ -210,6 +210,27 @@ $(function () {
   });
 });
 
+//Sorting dropdown
+$(function () {
+  $(document).on('click', '.js-sort-btn ', function () {
+    $('#sorting-list').fadeIn('slow');
+    $(this).toggleClass('show');
+    return false;
+  });
+
+  $(document).on('click', '.show', function () {
+    $('#sorting-list').fadeOut('slow');
+  });
+
+  $('.js-sort-btn').on('click', function () {
+    if (!$('.js-sort-btn').hasClass('sort-active')) {
+      $(this).addClass('sort-active');
+    } else {
+      $(this).removeClass('sort-active');
+    }
+  });
+});
+
 // Button List
 var hdrHeight = $('.header-theme').outerHeight();
 var height = $('.sec-search-box').offset().top + hdrHeight;

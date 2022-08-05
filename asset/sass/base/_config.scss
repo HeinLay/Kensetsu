@@ -78,7 +78,7 @@ $header-height-sp: 5.5rem;
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url('../font/Hiragino Kaku Gothic Pro W3.otf') format('truetype'),;
+  src: url('../font/Hiragino Kaku Gothic Pro W3.otf') format('truetype'), ;
 }
 
 @font-face {
@@ -86,7 +86,7 @@ $header-height-sp: 5.5rem;
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url('../font/Hiragino Kaku Gothic Pro W6.otf') format('truetype'),;
+  src: url('../font/Hiragino Kaku Gothic Pro W6.otf') format('truetype'), ;
 }
 
 @mixin m-font() {
@@ -159,6 +159,7 @@ $header-height-sp: 5.5rem;
   margin-right: $mgRight;
 
   content: $content;
+
   @if $color !=null {
     color: $color;
   }

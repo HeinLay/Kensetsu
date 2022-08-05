@@ -1,5 +1,564 @@
 /* ========================================================
 search.css
 ======================================================== */
-/* setting
+/* Search
 -------------------------------------------------------- */
+.search-page {
+
+  .popup-btn {
+    position: fixed;
+    top: $header-height-sp;
+    right: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    margin: 0 auto;
+    padding: 3rem 0;
+    background-color: $white;
+    text-align: center;
+
+    .change-search-btn {
+      width: 32.5rem;
+      line-height: 1.2;
+      margin: 0 auto;
+      padding: 1.5rem 2.5rem;
+      border: 1px solid $color01;
+      box-sizing: $l-btn-shadow;
+      background-color: $white;
+      color: $color01;
+      font-size: 1.5rem;
+      font-weight: 700;
+      border-radius: 2.9rem;
+      @include m-font();
+    }
+  }
+
+  .sub-pg-mv {
+    @include mq(sp) {
+      padding: 16rem 0 3.8rem;
+    }
+  }
+}
+
+.search-result {
+  position: relative;
+  padding: 5rem 0 0;
+  background-color: $color12;
+
+  @include mq(sp) {
+    padding-top: 2.5rem;
+  }
+
+  .tag-gp {
+    display: flex;
+    flex-wrap: wrap;
+
+    .tag {
+      line-height: 1.64;
+      margin-right: 0.6rem;
+      margin-bottom: 0.4rem;
+      padding: 0.2rem 0.5rem;
+      border: 1px solid $color01;
+      color: $color01;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border-radius: 0.5rem;
+      @include m-font();
+    }
+  }
+
+  .search-bar {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: 31.5%;
+      left: 7.5%;
+      width: 1.9rem;
+      height: 1.9rem;
+      background: url('#{$v-img-path}/icon/icon_job_search.png') no-repeat center/contain;
+      content: ' ';
+      transform: translateY(-50%);
+    }
+
+    .search-input {
+      width: 73%;
+      padding: 1.6rem 5rem 1.2rem;
+      border: none;
+      box-shadow: $ui-shadow;
+      font-family: "Hiragino Kaku Gothic Pro";
+      font-weight: 400;
+      outline: none;
+      border-radius: 1rem;
+    }
+  }
+
+  .current-search-criteria {
+    padding-bottom: 2rem;
+
+    @include mq(sp) {
+      width: 100%;
+      padding: 7rem 1rem 1.4rem;
+      border-bottom: 1px solid $color14;
+    }
+
+    .criteria-ttl {
+      line-height: 1.21;
+      padding-bottom: 1.1rem;
+      font-size: 1.6rem;
+      font-weight: 700;
+      @include m-font();
+
+      .s-bd-lf {
+        margin-right: 1rem;
+        border-left: 2px solid $color01;
+      }
+    }
+
+    .tag {
+      &:hover {
+        background-color: $color01;
+        color: $white;
+      }
+    }
+  }
+
+  .search-content {
+    display: flex;
+
+    position: relative;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 6rem;
+
+    @include mq(sp) {
+      position: initial;
+      padding: 0 0.35rem;
+    }
+  }
+
+  .search-main {
+    width: 65.89%;
+    max-width: 70.5rem;
+
+    @include mq(sp) {
+      width: 100%;
+    }
+
+    .top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 2rem;
+
+      @include mq(sp) {
+        flex-wrap: wrap;
+        padding-bottom: 0;
+      }
+
+      .sub-ttl {
+        line-height: 1.65;
+        color: $color07;
+        font-size: 1.8rem;
+        font-weight: 700;
+        @include m-font();
+
+        @include mq(sp) {
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          width: 100%;
+          margin: 0 auto;
+          padding: 2rem 0;
+          background-color: $white;
+          font-size: 1.4rem;
+          text-align: center;
+        }
+      }
+
+      .modalbox-link {
+        line-height: 1.64;
+        padding: 3rem 1rem;
+        color: $color07;
+        font-size: 1.3rem;
+        font-weight: 700;
+        @include m-font();
+
+        & span::after {
+          display: inline-block;
+          width: 0.8rem;
+          height: 1rem;
+          margin-left: 1rem;
+          background: url('#{$v-img-path}/icon/icon_list_btn.png') no-repeat center/contain;
+          content: '';
+        }
+      }
+
+      .sort-dropdown {
+        position: relative;
+        width: 17.4rem;
+        @include m-font();
+
+        @include mq(sp) {
+          width: 14.3rem;
+        }
+
+        .js-sort-btn {
+          position: relative;
+          width: 17.4rem;
+          padding: 1.6rem 2rem 1.6rem;
+          border: 1px solid $color14;
+          background-color: $white;
+          color: $color07;
+          font-size: 1.6rem;
+          font-weight: 700;
+          border-radius: 0.8rem;
+
+          @include mq(sp) {
+            width: 14.3rem;
+            padding: 1.5rem 1.3rem 1rem;
+            font-size: 1.3rem;
+          }
+
+          .btn-arr::after {
+            position: absolute;
+            top: 50%;
+            right: 11.5%;
+            width: 1rem;
+            height: 0.8rem;
+            background: url('#{$v-img-path}/icon/icon_dropdown_arr.png') no-repeat center/contain;
+            content: ' ';
+            transform: translateY(-50%);
+          }
+        }
+
+        .sort-active {
+          border-bottom-color: transparent;
+          border-radius: 0.8rem 0.8rem 0 0;
+
+          .btn-arr::after {
+            background: url('#{$v-img-path}/icon/icon_dropup_arr.png') no-repeat center/contain;
+            content: ' ';
+          }
+        }
+
+        .sorting-list {
+          display: none;
+          position: absolute;
+          z-index: 1;
+          width: 100%;
+          padding: 0 1.5rem;
+          border: 1px solid $color14;
+          background-color: $white;
+          border-radius: 0 0 0.8rem 0.8rem;
+          border-top: none;
+
+          .sorting-value {
+            display: block;
+            line-height: 1;
+            margin-bottom: 1.8rem;
+            color: $color07;
+            font-size: 1.2rem;
+            font-weight: 400;
+            @include m-font();
+
+            @include mq(sp) {
+              font-size: 1.2rem;
+            }
+
+            &:first-child {
+              padding-top: 1.7rem;
+              border-top: 1px solid $color14;
+            }
+          }
+        }
+
+        .show {
+          display: block;
+        }
+      }
+
+      .tag-gp {
+        @include mq(sp) {
+          width: 100%;
+        }
+      }
+    }
+
+    .result-list {
+
+      .result {
+        margin-bottom: 2rem;
+        padding: 2.5rem 0 2.8rem;
+        border: 1px solid $color14;
+        background-color: $white;
+        border-radius: 1.4rem;
+
+        @include mq(sp) {
+          padding: 2.5rem 0 2.1rem;
+        }
+
+        .result-info {
+          border-bottom: 1px solid $color14;
+
+          .result-heading {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 2.5rem 2rem;
+            border-bottom: 1px solid $color14;
+
+            .label-new {
+              display: inline-block;
+              line-height: 1.2;
+              padding: 0.1rem 0.4rem;
+              background-color: $color08;
+              color: $white;
+              font-size: 1.3rem;
+              font-weight: 500;
+              text-transform: uppercase;
+              border-radius: 0.4rem;
+              @include m-font();
+            }
+
+            .txt {
+              width: 100%;
+              line-height: 1.35;
+              padding-top: 0.5rem;
+              font-size: 1.8rem;
+              font-weight: 700;
+              letter-spacing: 0.015rem;
+              @include m-font();
+            }
+          }
+
+          .result-content {
+            padding: 2rem 2.5rem;
+            max-width: 70.5rem;
+
+            @include mq(sp) {
+              padding: 2rem 2.5rem 1.4rem;
+            }
+
+            .data-rows {
+              margin-bottom: 2.3rem;
+              column-count: 2;
+              -webkit-column-count: 2;
+              -moz-column-count: 2;
+              column-fill: balance;
+
+              @include mq(sp) {
+                margin-bottom: 1.5rem;
+                column-count: 1;
+                -webkit-column-count: 1;
+              }
+
+              .inner-ttl {
+                line-height: 1.35;
+                font-size: 1.6rem;
+                font-weight: 700;
+                letter-spacing: 0.015rem;
+                @include m-font();
+              }
+
+              .data-row {
+                margin-top: 1.3rem;
+
+                .description-ttl {
+                  line-height: 1.5;
+                  margin-bottom: 0.4rem;
+                  color: $color07;
+                  font-size: 1.3rem;
+                  font-weight: 700;
+                  @include m-font();
+                }
+
+                .description-txt {
+                  line-height: 1.5;
+                  color: $color01;
+                  font-size: 1.4rem;
+                  font-weight: 700;
+                  max-width: 30.5rem;
+                  @include m-font();
+
+                  .experiences {
+                    li {
+                      &::before {
+                        content: '◆';
+                      }
+                    }
+                  }
+                }
+
+                div.description-txt {
+                  line-height: 1.65;
+                  color: $color07;
+                  font-weight: 400;
+                  letter-spacing: 0.06rem;
+                }
+
+                h4.description-ttl,
+                div.description-txt {
+                  padding-left: 0.5rem;
+
+                  @include mq(sp) {
+                    padding-left: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .btn-gp {
+          display: flex;
+          position: relative;
+          justify-content: center;
+          align-items: center;
+          padding-top: 2.5rem;
+          font-size: 1.4rem;
+          @include m-font();
+
+          @include mq(sp) {
+            flex-wrap: wrap;
+            padding-top: 2.3rem;
+          }
+
+          @include mq(tab) {
+            flex-wrap: wrap;
+          }
+
+          .btn-theme-03 {
+            width: 14.8rem;
+            margin-right: 0.9rem;
+            padding: 0.8rem 0;
+            font-size: 1.4rem;
+
+            &::after {
+              left: 18.5%;
+            }
+          }
+
+          .btn-theme-02 {
+            width: 14.8rem;
+            padding: 0.8rem 0;
+            font-size: 1.4rem;
+          }
+
+          .seemore-link {
+            margin-left: 4.3rem;
+            color: $color01;
+            font-weight: 700;
+            text-decoration: underline;
+            text-align: center;
+
+            @include mq(sp) {
+              margin: 2rem auto 0;
+            }
+
+            @include mq(tab) {
+              margin: 2rem auto 0;
+            }
+          }
+        }
+      }
+    }
+
+    .pagination {
+      padding: 1.5rem 0 8.4rem;
+    }
+
+    .sec-rcmd-job {
+      margin-top: 0;
+      padding-top: 0;
+
+      .rcmd-col-blk .rcmd-col {
+        width: 48.1%;
+        max-width: 33.9rem;
+        column-gap: 2.7rem;
+
+        @include mq(sp) {
+          width: 100%;
+          margin: 0 auto 2rem;
+          max-width: 34.5rem;
+        }
+      }
+    }
+  }
+
+  .search-sidebar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: $header-height-pc + 5rem;
+    width: 31.78%;
+    margin-bottom: 5rem;
+    padding: 3rem 2.5rem 2.5rem;
+    border: 1px solid $color14;
+    background-color: $white;
+    max-width: 34rem;
+    max-width: 34rem;
+    border-radius: 1.4rem;
+
+    .sidebar-ttl {
+      line-height: 1.65;
+      margin-bottom: 3rem;
+      color: $color07;
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-align: center;
+      @include m-font();
+    }
+
+    .job-info-list {
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2.2rem 1.2rem;
+        border-bottom: 1px solid $color14;
+
+        .img-blk {
+          display: flex;
+          align-items: center;
+        }
+
+        .change-link {
+          line-height: 1.5;
+          color: $color01;
+          font-size: 1.6rem;
+          font-weight: 400;
+          text-decoration: underline;
+          @include m-font();
+        }
+
+        .s-mg-r {
+          margin-right: 1.2rem;
+        }
+      }
+    }
+
+    .search-bar {
+      padding-top: 2.5rem;
+      text-align: center;
+
+      &::before {
+        top: 35%;
+      }
+
+      .search-input {
+        width: 97.4%;
+        padding: 1.5rem 5rem;
+        box-shadow: none;
+        background-color: $color12;
+        font-size: 1.6rem;
+        max-width: 28.1rem;
+      }
+
+      .search-btn {
+        width: 76.4%;
+        margin: 1.8rem auto 0;
+        max-width: 22rem;
+      }
+    }
+  }
+}

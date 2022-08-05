@@ -4,4 +4,34 @@ pagenation.css - ページネーション関連スタイル
 
 /* pagenation - ページネーションパーツ設定
 -------------------------------------------------------- */
+/* ========================================================
+pagenation.css - ページネーション関連スタイル
+======================================================== */
 
+/* pagenation - ページネーションパーツ設定
+-------------------------------------------------------- */
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 0 8rem;
+}
+.page-numbers {
+  border-radius: 0.5rem;
+  border: 1px solid $color14;
+  background-color: $white;
+  display: inline-block;
+  text-align: center;
+  @include m-font1();
+  font-size: 1.3rem;
+  &.current {
+    color: $white;
+    background-color: $color01;
+  }
+}
+.page-numbers, .dots {
+  padding: 0.8rem 1.2rem;
+  color: $color07;
+  @include mq(sp) {
+    padding: 0.6rem 1.1rem;
+  }
+}
