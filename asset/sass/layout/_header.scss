@@ -326,6 +326,8 @@ header.css
   margin-top: -0.5rem;
   padding: 4.2rem 2.5rem 7.2rem;
   background-color: #fff;
+  max-height: 90vh;
+  overflow-y: scroll;
 
   .cust-name {
     padding-bottom: 2.1rem;
@@ -333,7 +335,6 @@ header.css
 
   .btn {
     position: relative;
-    width: 32.5rem;
     width: 100%;
     margin-bottom: 1.3rem;
     padding: 1.6rem 1rem;
@@ -344,6 +345,10 @@ header.css
     text-align: center;
     border-radius: 2.9rem;
     @include m-font();
+
+    &:hover {
+      opacity: 0.6;
+    }
 
     &::before {
       position: absolute;
@@ -416,6 +421,10 @@ header.css
         content: '';
         transform: translateY(-50%);
       }
+
+      &:hover {
+        opacity: 0.6;
+      }
     }
   }
 
@@ -433,6 +442,10 @@ header.css
         letter-spacing: 0.1rem;
         border-top: 1px solid $color14;
         @include m-font();
+
+        &:hover {
+          opacity: 0.6;
+        }
 
         &::before,
         &::after {
@@ -518,6 +531,10 @@ header.css
 
     @include mq(sp_min) {
       font-size: 1.2rem;
+    }
+
+    &:hover {
+      opacity: 0.6;
     }
 
     &::after {
