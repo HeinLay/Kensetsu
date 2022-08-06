@@ -66,7 +66,8 @@ $(function () {
   $('.jsMenuOpen').each(function () {
     $(this).on('click', function () {
       $(this).toggleClass('active');
-      $('.header-toggle').fadeToggle();
+      $('.header-toggle').toggleClass('is-show');
+      //$('.header-toggle').slideToggle();
 
     });
   });
@@ -201,18 +202,21 @@ $(function () {
   $('.jsModalOpen').each(function () {
     $(this).on('click', function () {
       $('#' + $(this).data('modal')).fadeIn();
-
     });
   });
   $('.jsModalClose').on('click', function () {
-    $('.modal').fadeOut();
+    $(this).parents('.modal').fadeOut();
+    return false;
+  });
+  $('.cat-form-btn .btn-theme-04').on('click', function () {
+    $(this).parents('.modal').fadeOut();
     return false;
   });
 });
 
 //Sorting dropdown
 $(function () {
-  $(document).on('click', '.js-sort-btn ', function () {
+  $(document).on('click', '.jsSortBtn ', function () {
     $('#sorting-list').fadeIn('slow');
     $(this).toggleClass('show');
     return false;
@@ -222,8 +226,8 @@ $(function () {
     $('#sorting-list').fadeOut('slow');
   });
 
-  $('.js-sort-btn').on('click', function () {
-    if (!$('.js-sort-btn').hasClass('sort-active')) {
+  $('.jsSortBtn').on('click', function () {
+    if (!$('.jsSortBtn').hasClass('sort-active')) {
       $(this).addClass('sort-active');
     } else {
       $(this).removeClass('sort-active');

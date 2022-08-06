@@ -322,12 +322,20 @@ header.css
 }
 
 .header-toggle {
-  display: none;
+  position: fixed;
+  right: -100vw;
+  z-index: 10;
+  width: 100%;
   margin-top: -0.5rem;
   padding: 4.2rem 2.5rem 7.2rem;
   background-color: #fff;
-  max-height: 90vh;
+  transition: all .5s ease;
+  max-height: 100vh;
   overflow-y: scroll;
+
+  &.is-show {
+    right: 0;
+  }
 
   .cust-name {
     padding-bottom: 2.1rem;
@@ -596,5 +604,9 @@ header.css
 
   .header-toggle {
     padding: 3.2rem 2.5rem 3.2rem;
+
+    .media-hr-btn {
+      margin: 0 auto 4rem;
+    }
   }
 }

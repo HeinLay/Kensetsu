@@ -13,23 +13,58 @@ search.css
     z-index: 5;
     width: 100%;
     margin: 0 auto;
-    padding: 3rem 0;
+    padding: 3rem;
     background-color: $white;
     text-align: center;
 
     .change-search-btn {
-      width: 32.5rem;
+      position: relative;
+      width: 100%;
       line-height: 1.2;
+      overflow: hidden;
       margin: 0 auto;
       padding: 1.5rem 2.5rem;
-      border: 1px solid $color01;
-      box-sizing: $l-btn-shadow;
+      border: none;
+      box-shadow: $l-btn-shadow;
       background-color: $white;
       color: $color01;
       font-size: 1.5rem;
       font-weight: 700;
+      outline: 1px solid $color01;
+      -webkit-transform: translate3d(0, 0, 0);
+      transition: all ease 0.6s;
       border-radius: 2.9rem;
+      -webkit-backface-visibility: hidden;
       @include m-font();
+
+      @supports (-webkit-hyphens:none) {
+        border: 1px solid $color01;
+        outline: none;
+      }
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background: $color01;
+        content: '';
+        transform: scale(0, 1);
+        transform-origin: right top;
+        transition: transform .6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+      }
+
+      &:hover {
+        color: $white;
+
+        &::before {
+          transform: scale(1, 1);
+          transform-origin: left top;
+        }
+
+      }
     }
   }
 
@@ -55,8 +90,7 @@ search.css
 
     .tag {
       line-height: 1.64;
-      margin-right: 0.6rem;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.5rem;
       padding: 0.2rem 0.5rem;
       border: 1px solid $color01;
       color: $color01;
@@ -104,15 +138,13 @@ search.css
 
     .criteria-ttl {
       line-height: 1.21;
-      padding-bottom: 1.1rem;
+      margin-bottom: 1.3rem;
+      padding: 0 0.9rem;
       font-size: 1.6rem;
       font-weight: 700;
+      border-left: 2px solid $color01;
       @include m-font();
 
-      .s-bd-lf {
-        margin-right: 1rem;
-        border-left: 2px solid $color01;
-      }
     }
 
     .tag {
@@ -125,11 +157,18 @@ search.css
 
   .search-content {
     display: flex;
-
     position: relative;
     justify-content: space-between;
     align-items: flex-start;
     padding: 0 6rem;
+
+    @include mq(laptop) {
+      padding: 0 3rem;
+    }
+
+    @include mq(tab) {
+      padding: 0;
+    }
 
     @include mq(sp) {
       position: initial;
@@ -154,6 +193,10 @@ search.css
       @include mq(sp) {
         flex-wrap: wrap;
         padding-bottom: 0;
+      }
+
+      .tag {
+        margin-right: 0.7rem;
       }
 
       .sub-ttl {
@@ -197,15 +240,9 @@ search.css
 
       .sort-dropdown {
         position: relative;
-        width: 17.4rem;
         @include m-font();
 
-        @include mq(sp) {
-          width: 14.3rem;
-        }
-
-        .js-sort-btn {
-          position: relative;
+        .sort-btn-content {
           width: 17.4rem;
           padding: 1.6rem 2rem 1.6rem;
           border: 1px solid $color14;
@@ -221,27 +258,36 @@ search.css
             font-size: 1.3rem;
           }
 
-          .btn-arr::after {
-            position: absolute;
-            top: 50%;
-            right: 11.5%;
-            width: 1rem;
-            height: 0.8rem;
-            background: url('#{$v-img-path}/icon/icon_dropdown_arr.png') no-repeat center/contain;
-            content: ' ';
-            transform: translateY(-50%);
+          .sort-btn {
+            display: block;
+            position: relative;
+
+            &::after {
+              position: absolute;
+              top: 50%;
+              right: 0;
+              width: 1rem;
+              height: 0.8rem;
+              background: url('#{$v-img-path}/icon/icon_dropdown_arr.png') no-repeat center/contain;
+              content: ' ';
+              transform: translateY(-50%);
+            }
           }
+
+          &.sort-active {
+            border-bottom-color: transparent;
+            border-radius: 0.8rem 0.8rem 0 0;
+
+            .sort-btn {
+              &::after {
+                background: url('#{$v-img-path}/icon/icon_dropup_arr.png') no-repeat center/contain;
+              }
+            }
+          }
+
         }
 
-        .sort-active {
-          border-bottom-color: transparent;
-          border-radius: 0.8rem 0.8rem 0 0;
 
-          .btn-arr::after {
-            background: url('#{$v-img-path}/icon/icon_dropup_arr.png') no-repeat center/contain;
-            content: ' ';
-          }
-        }
 
         .sorting-list {
           display: none;
@@ -300,16 +346,15 @@ search.css
         border-radius: 1.4rem;
 
         @include mq(sp) {
-          padding: 2.5rem 0 2.1rem;
+          padding: 2.5rem 0 2.8rem;
         }
 
         .result-info {
           border-bottom: 1px solid $color14;
 
           .result-heading {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 0 2.5rem 2rem;
+            margin: 0 2.5rem;
+            padding-bottom: 2rem;
             border-bottom: 1px solid $color14;
 
             .label-new {
@@ -322,11 +367,10 @@ search.css
               font-weight: 500;
               text-transform: uppercase;
               border-radius: 0.4rem;
-              @include m-font();
+              @include m-font1();
             }
 
             .txt {
-              width: 100%;
               line-height: 1.35;
               padding-top: 0.5rem;
               font-size: 1.8rem;
@@ -334,6 +378,7 @@ search.css
               letter-spacing: 0.015rem;
               @include m-font();
             }
+
           }
 
           .result-content {
@@ -341,74 +386,90 @@ search.css
             max-width: 70.5rem;
 
             @include mq(sp) {
-              padding: 2rem 2.5rem 1.4rem;
+              padding: 2rem 2.5rem 1rem;
             }
 
             .data-rows {
-              margin-bottom: 2.3rem;
-              column-count: 2;
-              -webkit-column-count: 2;
-              -moz-column-count: 2;
-              column-fill: balance;
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+              margin-bottom: 1.4rem;
 
               @include mq(sp) {
-                margin-bottom: 1.5rem;
-                column-count: 1;
-                -webkit-column-count: 1;
+                display: block;
+                margin-bottom: 1;
+              }
+
+              .left-blk {
+                width: 47%;
+
+                @include mq(sp) {
+                  width: 100%;
+                }
+              }
+
+              .right-blk {
+                width: 48%;
+
+                @include mq(sp) {
+                  width: 100%;
+                  margin-top: 1.8rem;
+                }
               }
 
               .inner-ttl {
                 line-height: 1.35;
+                margin-bottom: 1.2rem;
                 font-size: 1.6rem;
                 font-weight: 700;
                 letter-spacing: 0.015rem;
                 @include m-font();
               }
 
-              .data-row {
-                margin-top: 1.3rem;
+              .desc-ttl {
+                line-height: 1.5;
+                margin-bottom: 0.4rem;
+                color: $color07;
+                font-size: 1.3rem;
+                font-weight: 700;
+                @include m-font();
+              }
 
-                .description-ttl {
-                  line-height: 1.5;
-                  margin-bottom: 0.4rem;
-                  color: $color07;
-                  font-size: 1.3rem;
-                  font-weight: 700;
-                  @include m-font();
-                }
+              .desc-txt {
+                margin-bottom: 1.2rem;
+                font-size: 1.4rem;
+                @include m-font();
+              }
 
-                .description-txt {
+              .desc-content {
+                .desc-txt {
                   line-height: 1.5;
                   color: $color01;
-                  font-size: 1.4rem;
                   font-weight: 700;
-                  max-width: 30.5rem;
-                  @include m-font();
-
-                  .experiences {
-                    li {
-                      &::before {
-                        content: '◆';
-                      }
-                    }
-                  }
                 }
+              }
 
-                div.description-txt {
+              .data-row {
+                .desc-txt {
                   line-height: 1.65;
                   color: $color07;
                   font-weight: 400;
                   letter-spacing: 0.06rem;
                 }
 
-                h4.description-ttl,
-                div.description-txt {
-                  padding-left: 0.5rem;
-
-                  @include mq(sp) {
-                    padding-left: 0;
+                .experiences {
+                  li {
+                    &::before {
+                      content: '◆';
+                    }
                   }
                 }
+              }
+            }
+
+            .tag-gp {
+              .tag {
+                margin-right: 0.6rem;
               }
             }
           }
@@ -419,13 +480,15 @@ search.css
           position: relative;
           justify-content: center;
           align-items: center;
+          margin: 0 3rem;
           padding-top: 2.5rem;
           font-size: 1.4rem;
           @include m-font();
 
           @include mq(sp) {
             flex-wrap: wrap;
-            padding-top: 2.3rem;
+            margin: 0 1rem;
+            padding-top: 2rem;
           }
 
           @include mq(tab) {
@@ -438,15 +501,45 @@ search.css
             padding: 0.8rem 0;
             font-size: 1.4rem;
 
+            @include mq(sp_min) {
+              width: 13rem;
+            }
+
             &::after {
               left: 18.5%;
             }
+
           }
 
           .btn-theme-02 {
             width: 14.8rem;
             padding: 0.8rem 0;
             font-size: 1.4rem;
+
+
+            @include mq(sp_min) {
+              width: 13rem;
+
+              &::after {
+                right: 1.5rem;
+              }
+            }
+          }
+
+          .btn-theme-06 {
+            width: 16rem;
+            margin-right: 0.9rem;
+            padding: 0.8rem 0;
+            font-size: 1.4rem;
+
+            @include mq(sp) {
+              width: 15rem;
+            }
+
+            @include mq(sp_min) {
+              width: 13rem;
+            }
+
           }
 
           .seemore-link {
@@ -513,6 +606,10 @@ search.css
       @include m-font();
     }
 
+    .tag-gp {
+      justify-content: space-between;
+    }
+
     .job-info-list {
       li {
         display: flex;
@@ -520,6 +617,10 @@ search.css
         align-items: center;
         padding: 2.2rem 1.2rem;
         border-bottom: 1px solid $color14;
+
+        &:first-child {
+          border-top: 1px solid $color14;
+        }
 
         .img-blk {
           display: flex;

@@ -514,6 +514,7 @@ content.css
       padding-top: 1.6rem;
       font-size: 1.6rem;
       font-weight: 700;
+
       @include mq(sp) {
         line-height: 1.2;
       }
@@ -553,10 +554,10 @@ content.css
       color: $white;
       font-size: 1.3rem;
       font-weight: 400;
+      text-align: center;
       text-transform: uppercase;
       border-radius: 0.4rem;
       @include m-font1();
-      text-align: center;
 
       @include mq (sp) {
         line-height: 1.3;
@@ -578,48 +579,48 @@ content.css
 
   .occupation-txt {
     display: block;
+    padding: 0.9rem 0 1.8rem;
     color: $color07;
     font-size: 1.4rem;
     font-weight: 400;
-    padding: 0.9rem 0 1.8rem;
     @include m-font();
 
     @include mq (sp) {
-      font-size: 1.3rem;
       line-height: 1.5;
       padding: 0.6rem 0;
+      font-size: 1.3rem;
     }
   }
 
   .location-txt {
     display: block;
+    line-height: 1.3;
     color: $color07;
     font-size: 3rem;
     font-weight: 700;
-    line-height: 1.3;
     @include m-font();
 
     @include mq (sp) {
-      font-size: 2rem;
       line-height: 1.4;
+      font-size: 2rem;
     }
   }
 
   .amount-txt {
     display: block;
+    padding: 1.7rem 0 2rem;
     font-size: 1.5rem;
     font-weight: 700;
-    padding: 1.7rem 0 2rem;
     @include m-font();
 
     @include mq (sp) {
-      font-size: 1.3rem;
       padding: 1rem 0;
+      font-size: 1.3rem;
     }
 
     span {
-      color: $color01;
       padding-left: 0.7rem;
+      color: $color01;
 
       @include mq (sp) {
         font-size: 1.4rem;
@@ -630,9 +631,9 @@ content.css
   .tag-gp {
     display: flex;
     flex-wrap: wrap;
+    padding-top: 2.3rem;
     row-gap: 1rem;
     border-top: 1px solid $color14;
-    padding-top: 2.3rem;
 
     @include mq(sp) {
       margin-top: 1.3rem;
@@ -642,18 +643,18 @@ content.css
 
     li {
       span {
+        display: inline-block;
         margin-right: 0.7rem;
         padding: 0.2rem 0.6rem;
         border: 1px solid $color07;
+        border: 1px solid $color01;
+        background-color: $white;
         background-color: $white;
         color: $color07;
+        color: $color01;
         font-size: 1.4rem;
         border-radius: 0.5rem;
-        display: inline-block;
         @include m-font();
-        background-color: $white;
-        color: $color01;
-        border: 1px solid $color01;
 
         @include mq(sp) {
           margin-right: 0.4rem;

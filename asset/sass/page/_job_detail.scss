@@ -246,8 +246,8 @@
   align-items: center;
   z-index: 9;
   width: 100%;
-  padding: 4rem 0;
-  box-shadow: $header-shadow;
+  padding: 1.7rem 0;
+  box-shadow: $fix-btn-shadow;
   background-color: $white;
 
   @include mq(sp) {
@@ -281,6 +281,28 @@
       width: 14rem;
     }
   }
+
+  .btn-theme-06 {
+    width: 25.6rem;
+    margin-right: 2rem;
+
+    @include mq(sp) {
+      width: 15.6rem;
+      margin-right: 1.3rem;
+
+      &::after {
+        left: 1.5rem;
+      }
+    }
+
+    @include mq(sp_min) {
+      width: 14rem;
+    }
+
+    &::after {
+      left: 1.6rem;
+    }
+  }
 }
 
 #job-detail {
@@ -291,7 +313,7 @@
   }
 
   .footer-theme {
-    margin-bottom: 12.7rem;
+    margin-bottom: 7.7rem;
 
     @include mq(sp) {
       margin-bottom: 8.6rem;
