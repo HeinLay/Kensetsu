@@ -349,6 +349,7 @@ modal.css
         .search-btn {
           width: 26rem;
           padding: 1.2rem;
+          padding: 1.7rem 0;
           font-size: 1.5rem;
 
           @include mq (sp) {
@@ -360,6 +361,7 @@ modal.css
         .btn-theme-04 {
           width: 26rem;
           margin-right: 2%;
+          padding: 1.7rem 0;
           font-size: 1.5rem;
 
           @include mq (sp) {

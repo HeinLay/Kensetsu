@@ -525,6 +525,54 @@
   }
 }
 
+.btn-theme-05 {
+  position: relative;
+  overflow: hidden;
+  padding: 1.6rem 1rem;
+  border: none;
+  box-shadow: $l-btn-shadow;
+  background-color: $white;
+  color: $color10;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  outline: 1px solid $color14;
+  cursor: pointer;
+  -webkit-transform: translate3d(0, 0, 0);
+  transition: all ease 0.6s;
+  border-radius: 2.9rem;
+  -webkit-backface-visibility: hidden;
+  @include m-font();
+
+  @supports (-webkit-hyphens:none) {
+    border: 1px solid $color14;
+    outline: none;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: $color01;
+    content: '';
+    transform: scale(0, 1);
+    transform-origin: right top;
+    transition: transform 0.6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+  }
+
+  &:hover {
+    color: $white;
+
+    &::before {
+      transform: scale(1, 1);
+      transform-origin: left top;
+    }
+  }
+}
+
 .btn-theme-06 {
   position: relative;
   overflow: hidden;
@@ -598,6 +646,37 @@
   }
 }
 
+.btn-theme-08 {
+  position: relative;
+  padding-right: 1.9rem;
+  color: $color01;
+  font-size: 1.3rem;
+  font-weight: 700;
+  @include m-font();
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 0.9rem;
+    height: 0.9rem;
+    background: url('#{$v-img-path}icon/icon_list_btn.png') no-repeat center/contain;
+    content: '';
+    transform: translateY(-50%);
+  }
+}
+
+.btn-theme-disabled {
+  background: $color14;
+  border-radius: 2.9rem;
+  color: $color10;
+  cursor: not-allowed;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  outline: none;
+}
+
 /* Sub Page Heading
 -------------------------------------------------------- */
 .sub-pg-mv {
@@ -639,14 +718,397 @@
   }
 }
 
-/* section parts
+/* Job Entry Input
 -------------------------------------------------------- */
+.sec-appform {
+  .app-form-inner {
+    padding: 0.2rem 2rem;
+
+    @include mq (sp) {
+      padding: 1.1rem 2.5rem 2.3rem;
+    }
+  }
+}
+
+.sec-appform {
+  .err-form-msg {
+    margin-bottom: 2.5rem;
+  }
+
+  .cmn-tbl {
+    th {
+      width: 34%;
+
+      @include mq (tab) {
+        width: 100%;
+      }
+
+      @include mq (sp) {
+        width: 100%;
+      }
+    }
+
+    td {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 63.4%;
+      row-gap: 1.5rem;
+      column-gap: 1.3rem;
+
+      @include mq (tab) {
+        width: 100%;
+      }
+
+      @include mq (sp) {
+        width: 100%;
+        column-gap: 0.9rem;
+      }
+
+      .custom-chk {
+        text-indent: 2rem;
+      }
 
 
+      &.full-name {
+        .cmn-txt {
+          width: 17.6rem;
 
-/* hr
+          @include mq (tab) {
+            width: 48%;
+          }
+
+          @include mq (sp) {
+            width: 48%;
+          }
+        }
+
+      }
+
+      &.dob {
+        .cmn-select {
+          width: 11.3rem;
+
+          @include mq (tab) {
+            width: 31%;
+          }
+
+          @include mq (sp) {
+            width: 31%;
+          }
+        }
+      }
+
+      .sub-lbl {
+        width: 42%;
+        font-size: 1.2rem;
+
+        @include mq (sp) {
+          width: 100%;
+        }
+      }
+
+      .info-content {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        @include mq (sp) {
+          flex-direction: column;
+        }
+
+        .info {
+          display: flex;
+          flex-direction: column;
+          width: 53%;
+          row-gap: 1.5rem;
+
+          @include mq (sp) {
+            width: 100%;
+          }
+
+          .cmn-txt {
+            width: 81.5%;
+            padding: 1.2rem 1.4rem;
+
+            @include mq (sp) {
+              width: 48.5%;
+            }
+          }
+
+          .unit {
+            padding-left: 0.5rem;
+            color: $color07;
+            font-size: 1.3rem;
+            font-weight: 700;
+            @include m-font();
+          }
+        }
+      }
+    }
+  }
+}
+
+.sec-appform,
+.sec-confirm-form {
+  background-color: $color12;
+
+  @include mq (sp) {
+    background-color: $white;
+  }
+}
+
+.sec-form {
+  .sec-job-desc {
+    padding: 9.8rem 0 2.4rem;
+
+    @include mq (sp) {
+      padding: 4rem 0 4.2rem;
+    }
+
+    .sec-full {
+      max-width: 89rem;
+
+      @include mq(sp) {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.form-content {
+  padding-bottom: 9.8rem;
+
+  @include mq(sp) {
+    padding-bottom: 0;
+  }
+}
+
+.app-form-blk {
+  width: 94%;
+  margin: 0 auto;
+  padding: 10rem 0 9rem;
+  border: 1px solid $color14;
+  background-color: $white;
+  max-width: 88.7rem;
+  border-radius: 1.4rem;
+
+  @include mq (sp) {
+    width: 100%;
+    padding: 3.3rem 0 0;
+    border: none;
+    max-width: 100%;
+    border-radius: 0;
+  }
+}
+
+.app-form-btn {
+  display: flex;
+  justify-content: space-between;
+  width: 55rem;
+  margin: 3rem auto 0;
+  column-gap: 1rem;
+
+  @include mq (sp) {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 6.7%;
+    background-color: $white;
+  }
+
+  .btn-theme-01,
+  .btn-theme-05 {
+    width: 26.5rem;
+    font-size: 1.5rem;
+
+    @include mq (sp) {
+      width: 100%;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.1rem;
+    }
+  }
+
+  .btn-theme-01 {
+    padding: 1.6rem 1rem;
+
+    @include mq (sp) {
+      padding: 1.8rem 1rem;
+    }
+  }
+
+  .btn-theme-05 {
+    @include mq (sp) {
+      padding: 1.7rem 1rem;
+    }
+  }
+}
+
+/* Job Entry Confirm
 -------------------------------------------------------- */
+.confirm-form-blk {
+  .sec-ttl {
+    margin-bottom: 2.4rem;
+  }
 
+  .cmn-tbl {
+    tr {
+      padding: 2.38rem 0;
+      border-bottom: 1px solid $color14;
+
+      @include mq (tab) {
+        flex-direction: row;
+      }
+
+      @include mq (sp) {
+        flex-direction: row;
+        align-items: center;
+        line-height: 1.54;
+        margin-bottom: 0;
+        padding: 1.95rem 0;
+      }
+
+      .cmn-lbl {
+        width: 32%;
+        line-height: 1.2;
+        padding: 0;
+
+        @include mq (tab) {
+          width: 45%;
+        }
+
+        @include mq (sp) {
+          width: 35%;
+        }
+      }
+
+      .cmn-confirm-txt {
+        width: 69%;
+
+        @include mq (tab) {
+          width: 58%;
+        }
+
+        @include mq (sp) {
+          width: 60%;
+        }
+      }
+    }
+  }
+}
+
+.sec-confirm-form {
+  .app-form-btn {
+    @include mq (sp) {
+      padding: 4rem 6.7% 1.4rem;
+    }
+  }
+}
+
+/* Job Entry Complete
+-------------------------------------------------------- */
+.sec-app-completed {
+
+  .sec-job-desc {
+    padding: 9.8rem 0 5.9rem;
+
+    @include mq(sp) {
+      padding: 4rem 0 4.2rem;
+    }
+  }
+
+  .app-complete-blk {
+    padding: 6rem 0 3.5rem;
+    background-color: $white;
+    text-align: center;
+    @include m-font();
+
+    @include mq (sp) {
+      padding: 7rem 0 0.2rem;
+    }
+
+    .sec-full {
+      @include mq (sp) {
+        width: 86.5%;
+      }
+    }
+
+    .app-completed-txt {
+      padding-top: 1.7rem;
+      color: $color01;
+      font-size: 1.8rem;
+      font-weight: 700;
+
+      @include mq (sp) {
+        padding-top: 2.8rem;
+      }
+    }
+
+    .instruction-txt,
+    .desc-txt {
+      line-height: 2;
+      color: $color07;
+      font-size: 1.4rem;
+      font-weight: 400;
+      text-align: center;
+
+      @include mq (sp) {
+        line-height: 1.7;
+        text-align: left;
+      }
+    }
+
+    .instruction-txt {
+      padding: 3.8rem 0 2.6rem;
+
+      @include mq (sp) {
+        padding: 3rem 0 2rem;
+      }
+    }
+
+    .desc-txt {
+      padding-bottom: 4.8rem;
+
+      @include mq (sp) {
+        padding-bottom: 2.7rem;
+      }
+    }
+
+    .list-btn {
+      width: 26rem;
+      margin-bottom: 4.2rem;
+      padding: 1.6rem 1rem;
+      letter-spacing: 0.1rem;
+
+      @include mq (sp) {
+        width: 24.3rem;
+        margin-bottom: 4.4rem;
+        padding: 1.4rem 1rem;
+        letter-spacing: 0.2rem;
+      }
+
+      &::after {
+        right: 8%;
+        width: 0.9rem;
+        height: 0.9rem;
+      }
+    }
+  }
+
+  .confirm-history {
+    width: 97.4%;
+    margin: 0 auto;
+
+    @include mq (sp) {
+      width: 94.5%;
+    }
+
+    .btn-theme-08+.btn-theme-08 {
+      margin-left: 3rem;
+    }
+  }
+}
 
 /* label
 -------------------------------------------------------- */

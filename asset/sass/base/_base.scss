@@ -252,6 +252,11 @@ body {
 
 /* link
 -------------------------------------------------------- */
+a,button{
+  line-height: 1;
+  border: none;
+  background-color: transparent;
+}
 a {
   display: inline-block;
   text-decoration: none;

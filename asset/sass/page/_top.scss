@@ -286,27 +286,26 @@
     }
 
     .merit-col {
+      width: 24.8rem;
       margin-right: 2.6rem;
-      margin-bottom: 3rem;
+      margin-bottom: 5rem;
 
       @include mq(sp) {
         width: 36.1rem;
         margin: 0 auto 2.1rem;
-      }
 
-      @include mq(desktop) {
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-
-      @include mq(sp) {
         &:nth-child(4) {
           .merit-img-txt {
             .merit-num {
               top: 50%;
             }
           }
+        }
+      }
+
+      @include mq(desktop) {
+        &:last-child {
+          margin-right: 0;
         }
       }
 

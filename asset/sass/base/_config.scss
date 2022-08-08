@@ -17,6 +17,7 @@ $color11: #e7e7e7;
 $color12: #f5f6f7;
 $color13: #222222;
 $color14: #dfdfdf;
+$color15: #ea5519;
 
 //btn-shadow #{$v-btn-shadow}
 $m-btn-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.2);
@@ -79,7 +80,7 @@ $header-height-sp: 5.5rem;
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url('../font/Hiragino Kaku Gothic Pro W3.otf') format('truetype'), ;
+  src: url('../font/Hiragino Kaku Gothic Pro W3.otf') format('truetype');
 }
 
 @font-face {
@@ -87,7 +88,7 @@ $header-height-sp: 5.5rem;
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url('../font/Hiragino Kaku Gothic Pro W6.otf') format('truetype'), ;
+  src: url('../font/Hiragino Kaku Gothic Pro W6.otf') format('truetype');
 }
 
 @mixin m-font() {

@@ -1,29 +1,31 @@
 /* Job Detail
 -------------------------------------------------------- */
-.sec-job-desc {
-  padding: 10.2rem 0 8rem;
-
-  @include mq(sp) {
-    padding: 4rem 0 4.2rem;
-  }
-
-  .sec-full {
-    max-width: 90rem;
+.sec-job-detail {
+  &.sec-job-desc {
+    padding: 10.2rem 0 8rem;
 
     @include mq(sp) {
-      width: 86.4%;
-      max-width: 100%;
+      padding: 4rem 0 4.2rem;
     }
-  }
 
-  .btn-theme-01 {
-    display: block;
-    width: 26.5rem;
-    margin: 4.3rem auto 0;
+    .sec-full {
+      max-width: 90rem;
 
-    @include mq(sp) {
-      width: 100%;
-      margin: 2.2rem auto 0;
+      @include mq(sp) {
+        max-width: 100%;
+      }
+    }
+
+    .btn-theme-01 {
+      display: block;
+      width: 26.5rem;
+      padding: 1.6rem 0;
+      margin: 4.3rem auto 0;
+
+      @include mq(sp) {
+        width: 100%;
+        margin: 2.2rem auto 0;
+      }
     }
   }
 }
@@ -49,6 +51,7 @@
     display: block;
     width: 26.5rem;
     margin: 0 auto;
+    padding: 1.6rem 0;
 
     @include mq(sp) {
       width: 100%;
@@ -258,6 +261,7 @@
   .btn-theme-03 {
     width: 25.6rem;
     margin-right: 2rem;
+    padding: 1.6rem 0;
 
     @include mq(sp) {
       width: 15.6rem;
@@ -272,6 +276,7 @@
 
   .btn-theme-01 {
     width: 25.6rem;
+    padding: 1.6rem 0;
 
     @include mq(sp) {
       width: 15.6rem;
@@ -285,6 +290,8 @@
   .btn-theme-06 {
     width: 25.6rem;
     margin-right: 2rem;
+    padding: 1.6rem 0;
+
 
     @include mq(sp) {
       width: 15.6rem;
@@ -300,7 +307,7 @@
     }
 
     &::after {
-      left: 1.6rem;
+      left: 5.6rem;
     }
   }
 }

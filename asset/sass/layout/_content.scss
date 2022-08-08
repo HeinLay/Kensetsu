@@ -539,6 +539,11 @@ content.css
 .sec-job-desc {
   background-color: $color12;
 
+  .sec-full {
+    @include mq(sp) {
+      width: 86.4%;
+    }
+  }
 
   .job-offer-id {
     display: flex;
@@ -581,14 +586,14 @@ content.css
     display: block;
     padding: 0.9rem 0 1.8rem;
     color: $color07;
-    font-size: 1.4rem;
-    font-weight: 400;
+    font-size: 3rem;
+    font-weight: 700;
     @include m-font();
 
     @include mq (sp) {
       line-height: 1.5;
       padding: 0.6rem 0;
-      font-size: 1.3rem;
+      font-size: 2rem;
     }
   }
 
@@ -596,13 +601,13 @@ content.css
     display: block;
     line-height: 1.3;
     color: $color07;
-    font-size: 3rem;
-    font-weight: 700;
+    font-size: 1.4rem;
+    font-weight: 400;
     @include m-font();
 
     @include mq (sp) {
       line-height: 1.4;
-      font-size: 2rem;
+      font-size: 1.3rem;
     }
   }
 

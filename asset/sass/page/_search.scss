@@ -3,6 +3,32 @@ search.css
 ======================================================== */
 /* Search
 -------------------------------------------------------- */
+#sp-campaign-id {
+  .sub-pg-mv {
+    padding: 5rem 0 3.8rem;
+  }
+
+  .search-result {
+    .search-sidebar {
+      .search-bar {
+        &::before {
+          display: none;
+        }
+
+        .search-btn {
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .search-main {
+      .top-row {
+        padding-top: 4rem;
+      }
+    }
+  }
+}
+
 .search-page {
 
   .popup-btn {
@@ -498,7 +524,7 @@ search.css
           .btn-theme-03 {
             width: 14.8rem;
             margin-right: 0.9rem;
-            padding: 0.8rem 0;
+            //padding: 0.8rem 0;
             font-size: 1.4rem;
 
             @include mq(sp_min) {
@@ -513,7 +539,6 @@ search.css
 
           .btn-theme-02 {
             width: 14.8rem;
-            padding: 0.8rem 0;
             font-size: 1.4rem;
 
 
@@ -529,7 +554,6 @@ search.css
           .btn-theme-06 {
             width: 16rem;
             margin-right: 0.9rem;
-            padding: 0.8rem 0;
             font-size: 1.4rem;
 
             @include mq(sp) {

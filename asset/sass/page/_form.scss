@@ -1,0 +1,210 @@
+.app-form-inner {
+  margin: 0 auto;
+  padding: 0 2rem;
+  max-width: 61.6rem;
+
+  @include mq (sp) {
+    padding: 0 2.5rem;
+    max-width: 100%;
+  }
+}
+
+/* Error Message
+-------------------------------------------------------- */
+.err-form-msg {
+  display: inline-block;
+  position: relative;
+  padding-left: 2rem;
+  color: $color15;
+  font-size: 1.4rem;
+  font-weight: 700;
+  @include m-font();
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 1.6rem;
+    height: 1.7rem;
+    background: url('#{$v-img-path}icon/icon_error.png') no-repeat center/contain;
+    content: '';
+    transform: translateY(-50%);
+  }
+}
+
+.err-msg {
+  width: 100%;
+  color: $color15;
+  font-size: 1.2rem;
+  font-weight: 700;
+  @include m-font();
+}
+
+.err-input {
+  .cmn-txt {
+    border: 1px solid $color15;
+
+    &::placeholder {
+      color: $color15;
+    }
+  }
+
+  .cmn-select {
+    border: 1px solid $color15;
+    background-image: url('#{$v-img-path}icon/icon_error_down_arr.png');
+    color: $color15;
+  }
+
+  .cmn-lbl {
+    border: 1px solid $color15;
+    color: $color15;
+  }
+
+  .custom-chk:before {
+    border: 1px solid $color15;
+  }
+}
+
+/* Common Input
+-------------------------------------------------------- */
+input,
+select {
+  border: 1px solid $color14;
+  font-size: 1.3rem;
+  font-weight: 400;
+  outline: none;
+  border-radius: 0.4rem;
+  @include m-font();
+}
+
+::placeholder {
+  color: $color10;
+}
+
+/* Common Label
+-------------------------------------------------------- */
+.cmn-lbl {
+  display: block;
+  padding-top: 1.6rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: left;
+  @include m-font();
+
+  @include mq (tab) {
+    padding-bottom: 1.5rem;
+  }
+
+  @include mq (sp) {
+    padding-top: 1.5rem;
+    padding-bottom: 1.2rem;
+  }
+
+  span {
+    padding-left: 0.7rem;
+    color: $color01;
+    font-size: 1.2rem;
+  }
+}
+
+/* Common Textbox
+-------------------------------------------------------- */
+.cmn-txt {
+  width: 100%;
+  padding: 1.2rem 1.5rem;
+}
+
+/* Common Select
+-------------------------------------------------------- */
+.cmn-select {
+  width: 100%;
+  padding: 1.2rem 1.5rem;
+  background-color: $white;
+  background-image: url('#{$v-img-path}icon/icon_selectbox_arr.png');
+  background-size: 8px 6px;
+  background-position: center right 1.5rem;
+  background-repeat: no-repeat;
+  color: $color07;
+  font-weight: 700;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* Custom Checkbox
+-------------------------------------------------------- */
+.custom-chk {
+  display: inline-block;
+  width: 100%;
+  padding: 1.3rem;
+  border: 1px solid $color14;
+  border-radius: 0.4rem;
+}
+
+input[type="checkbox"] {
+  display: none;
+  width: initial;
+  height: initial;
+  margin-bottom: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.custom-chk {
+  position: relative;
+}
+
+.custom-chk:before {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  border: 1px solid $color14;
+  content: '';
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+
+input[type=checkbox]:checked+.custom-chk:before {
+  border: 1px solid transparent;
+}
+
+input[type=checkbox]:checked+.custom-chk:after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  background: url('#{$v-img-path}icon/icon_modal_tick.png') no-repeat center/contain;
+  content: '';
+  transform: translateY(-50%);
+}
+
+/* Common Table
+-------------------------------------------------------- */
+.cmn-tbl {
+  width: 100%;
+
+  tr {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2.4rem;
+
+    @include mq (tab) {
+      flex-direction: column;
+    }
+
+    @include mq (sp) {
+      flex-direction: column;
+      padding-bottom: 1.8rem;
+    }
+  }
+}
+
+.cmn-confirm-txt {
+  color: $color07;
+  font-size: 1.5rem;
+  font-weight: 400;
+  @include m-font();
+}

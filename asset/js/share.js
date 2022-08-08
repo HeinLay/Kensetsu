@@ -61,15 +61,34 @@ if (_ua.Mobile) {
   });
 }
 
-// MenuOpen
-$(function () {
-  $('.jsMenuOpen').each(function () {
-    $(this).on('click', function () {
-      $(this).toggleClass('active');
-      $('.header-toggle').toggleClass('is-show');
-      //$('.header-toggle').slideToggle();
+// slide menu open
+function menuOpen() {
+  scrollPos = $(window).scrollTop();
+  $('.header-toggle').addClass('is-show');
+  $('.jsMenuOpen').addClass('active');
+  $('html').addClass('scroll-prevent');
+  $('body').css('position', 'fixed');
+}
 
-    });
+// slide menu close
+function menuClose() {
+  $('.header-toggle').removeClass('is-show');
+  $('.jsMenuOpen').removeClass('active');
+  $('html').removeClass('scroll-prevent');
+  $('body').css('position', '');
+  $(window).scrollTop(scrollPos);
+}
+
+// slide menu
+$(function () {
+  $('.jsMenuOpen').on('click', function () {
+    if (!$('html').hasClass('scroll-prevent')) {
+      // open
+      menuOpen();
+    } else {
+      // close
+      menuClose();
+    }
   });
 });
 
@@ -99,7 +118,7 @@ setTimeout(function () {
 });
 
 setTimeout(function () {
-  var max = 31;
+  var max = 50;
   var space = 0;
   var tot, str, i;
   var modifyStr;
