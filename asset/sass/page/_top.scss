@@ -938,7 +938,7 @@
   }
 
   .sec-full {
-    padding: 0 3.4rem 0 6rem;
+    padding: 0 6rem 0 6rem;
 
     @include mq(sp) {
       padding: 0 0.5rem;
@@ -1028,7 +1028,7 @@
     z-index: 5;
 
     @include mq(tab) {
-      left: -5%;
+      left: -6.5%;
     }
 
     &:hover {
@@ -1043,15 +1043,15 @@
   }
 
   .slick-next {
-    right: -3.1%;
+    right: -5.6%;
     z-index: 5;
 
     @include mq(tab) {
-      right: -5%;
+      right: -6.5%;
     }
 
     @include mq(laptop) {
-      right: -2.8%;
+      right: -5.6%;
     }
 
     &:hover {
@@ -1463,9 +1463,9 @@
     .beginner-guide-btn {
       position: relative;
       width: 22.6rem;
-      line-height: 1.5;
+      // line-height: 1.5;
       overflow: hidden;
-      padding: 1.2rem 0;
+      padding: 1.7rem 0;
       color: $color01;
       font-size: 1.4rem;
       font-weight: 700;
