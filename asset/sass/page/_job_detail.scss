@@ -19,8 +19,8 @@
     .btn-theme-01 {
       display: block;
       width: 26.5rem;
-      padding: 1.6rem 0;
       margin: 4.3rem auto 0;
+      padding: 1.6rem 0;
 
       @include mq(sp) {
         width: 100%;
@@ -73,7 +73,7 @@
     tr {
       display: flex;
       padding: 2.5rem 0;
-      border-top: 1px solid #dfdfdf;
+      border-top: 1px solid $color14;
 
       @include mq(sp) {
         flex-direction: column;
@@ -240,7 +240,7 @@
   }
 }
 
-#job-detail .btn-gp {
+.job-detail .btn-gp {
   display: flex;
   position: fixed;
   bottom: 0;
@@ -312,7 +312,7 @@
   }
 }
 
-#job-detail {
+.job-detail {
   .sec-rcmd-job {
     @include mq(sp) {
       padding-top: 7rem;

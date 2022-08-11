@@ -22,6 +22,7 @@
   }
 
   .main-ttl {
+    display: inline-block;
     position: relative;
     padding: 0 4rem;
 
@@ -67,6 +68,7 @@
   font-weight: 700;
   letter-spacing: 0.2rem;
   outline: 2px solid $color08;
+  cursor: pointer;
   -webkit-transform: translate3d(0, 0, 0);
   transition: all ease 0.6s;
   max-width: 30.5rem;
@@ -215,6 +217,7 @@
   font-weight: 700;
   text-align: center;
   outline: 1px solid $color01;
+  cursor: pointer;
   -webkit-transform: translate3d(0, 0, 0);
   transition: all ease 0.6s;
   border-radius: 2.9rem;
@@ -646,12 +649,61 @@
   }
 }
 
+.btn-theme-07 {
+  position: relative;
+  overflow: hidden;
+  padding: 1.2rem 0;
+  border: none;
+  box-shadow: $l-btn-shadow;
+  background-color: $white;
+  color: $color08;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  outline: 1px solid $color08;
+  cursor: pointer;
+  -webkit-transform: translate3d(0, 0, 0);
+  transition: all ease 0.6s;
+  border-radius: 2.9rem;
+  -webkit-backface-visibility: hidden;
+  @include m-font();
+
+  @supports (-webkit-hyphens:none) {
+    border: 1px solid $color08;
+    outline: none;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: $color08;
+    content: '';
+    transform: scale(0, 1);
+    transform-origin: right top;
+    transition: transform 0.6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+  }
+
+  &:hover {
+    color: $white;
+
+    &::before {
+      transform: scale(1, 1);
+      transform-origin: left top;
+    }
+  }
+}
+
 .btn-theme-08 {
   position: relative;
   padding-right: 1.9rem;
   color: $color01;
   font-size: 1.3rem;
   font-weight: 700;
+  cursor: pointer;
   @include m-font();
 
   &::after {
@@ -666,15 +718,67 @@
   }
 }
 
-.btn-theme-disabled {
-  background: $color14;
-  border-radius: 2.9rem;
-  color: $color10;
-  cursor: not-allowed;
-  text-align: center;
+.btn-theme-09 {
+  position: relative;
+  overflow: hidden;
+  padding: 1.2rem 0;
+  border: none;
+  box-shadow: $l-btn-shadow;
+  background-color: $white;
+  color: $color01;
   font-size: 1.5rem;
   font-weight: 700;
+  text-align: center;
+  outline: 1px solid $color01;
+  cursor: pointer;
+  -webkit-transform: translate3d(0, 0, 0);
+  transition: all ease 0.6s;
+  border-radius: 2.9rem;
+  -webkit-backface-visibility: hidden;
+  @include m-font();
+
+  @supports (-webkit-hyphens:none) {
+    border: 1px solid $color01;
+    outline: none;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: $color01;
+    content: '';
+    transform: scale(0, 1);
+    transform-origin: right top;
+    transition: transform 0.6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+  }
+
+  &:hover {
+    color: $white;
+
+    &::before {
+      transform: scale(1, 1);
+      transform-origin: left top;
+    }
+  }
+}
+
+.btn-theme-disabled {
+  padding: 1.5rem 0;
+  border: none;
+  box-shadow: none;
+  background-color: $color14;
+  color: $color10;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
   outline: none;
+  cursor: not-allowed;
+  border-radius: 2.9rem;
+  @include m-font();
 }
 
 /* Sub Page Heading
@@ -714,6 +818,69 @@
     @include mq(sp) {
       line-height: 1.21;
       font-size: 2.2rem;
+    }
+  }
+}
+
+.sub-pg-mv-white {
+  padding: 10.4rem 0 6.8rem;
+  background-color: $white;
+  @include m-font();
+
+  @include mq(sp) {
+    padding: 4.8rem 0;
+  }
+
+  .sec-ttl {
+    margin-bottom: 0;
+  }
+}
+
+.sub-entry-pg-mv {
+  padding: 10.4rem 0 3.2rem;
+  background-color: $white;
+  @include m-font();
+
+  @include mq(sp) {
+    padding: 5.2rem 0 2.4rem;
+  }
+
+  .sec-full {
+    max-width: 57.6rem;
+
+    @include mq(sp) {
+      width: 86%;
+      max-width: 100%;
+    }
+  }
+
+  .step-img {
+    display: block;
+    padding: 2.7rem 0 6.3rem;
+    text-align: center;
+
+    @include mq(sp) {
+      padding: 2.4rem 0 3.6rem;
+
+      img {
+        width: 24.8rem;
+        height: 3.2rem;
+      }
+    }
+  }
+
+  .step-txt {
+    line-height: 1.45;
+    color: $color07;
+    font-size: 1.8rem;
+    font-weight: 700;
+    @include m-font();
+
+    span {
+      display: block;
+      color: $color01;
+      font-size: 1.6rem;
+      @include m-font1();
     }
   }
 }
@@ -849,18 +1016,15 @@
   }
 }
 
-.sec-appform,
-.sec-confirm-form {
+.sec-form {
   background-color: $color12;
 
   @include mq (sp) {
     background-color: $white;
   }
-}
 
-.sec-form {
   .sec-job-desc {
-    padding: 9.8rem 0 2.4rem;
+    padding: 9.8rem 0 4rem;
 
     @include mq (sp) {
       padding: 4rem 0 4.2rem;
@@ -954,7 +1118,7 @@
 
   .cmn-tbl {
     tr {
-      padding: 2.38rem 0;
+      padding: 2.4rem 0;
       border-bottom: 1px solid $color14;
 
       @include mq (tab) {
@@ -1110,21 +1274,790 @@
   }
 }
 
-/* label
+/* Inquiry Input
 -------------------------------------------------------- */
+.sec-inquiry-form {
+  .app-form-blk {
+    margin-top: 6rem;
+    padding: 4.6rem 0 6rem;
 
+    @include mq (sp) {
+      margin-top: 0;
+      padding: 0;
+    }
 
-/* table
+    .abt-inquiry {
+      line-height: 1.5;
+      padding-bottom: 2.7rem;
+      color: $color01;
+      font-size: 1.4rem;
+      font-weight: 700;
+      @include m-font();
+
+      span {
+        display: block;
+      }
+
+      span+span {
+        padding-top: 2rem;
+      }
+    }
+
+    .custom-rdo+.custom-rdo {
+      margin-left: 1.8rem;
+    }
+
+    .cmn-tbl {
+      tr {
+        line-height: 1.2;
+
+        @include mq (tab) {
+          flex-direction: row;
+        }
+
+        @include mq (sp) {
+          padding-bottom: 1.5rem;
+        }
+      }
+
+      th {
+        width: 37%;
+
+        @include mq (sp) {
+          width: 100%;
+        }
+      }
+
+      td {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 64%;
+        row-gap: 1.5rem;
+        column-gap: 1.3rem;
+
+        @include mq (sp) {
+          width: 100%;
+        }
+      }
+
+      .division {
+        justify-content: flex-start;
+        align-items: flex-end;
+        padding-top: 1.7rem;
+
+        @include mq (tab) {
+          align-items: flex-start;
+        }
+
+        @include mq (sp) {
+          padding-top: 0.7rem;
+        }
+      }
+
+      .furigana-header,
+      .email-header,
+      .confirm-email-header,
+      .postal-header {
+        .cmn-lbl {
+          padding-top: 0.4rem;
+
+          @include mq (sp) {
+            padding-top: 1.5rem;
+          }
+
+          span {
+            display: block;
+            padding-top: 0.6rem;
+            padding-left: 0;
+
+            @include mq (sp) {
+              display: inline-block;
+            }
+          }
+        }
+      }
+
+      .postal-header {
+        .cmn-lbl {
+          span {
+            color: $color10;
+            font-weight: 400;
+          }
+        }
+      }
+
+      .name,
+      .furigana {
+        display: flex;
+        justify-content: space-between;
+        width: 48%;
+
+        @include mq (sp) {
+          width: 100%;
+        }
+
+        .cmn-lbl {
+          width: 17.2%;
+          font-size: 1.3rem;
+          font-weight: 400;
+
+          @include mq (sp) {
+            width: 12%;
+          }
+        }
+
+        .cmn-txt {
+          width: 83%;
+
+          @include mq (sp) {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .agree-checkbox {
+      display: block;
+      margin: 3.4rem 0 2rem;
+      text-align: center;
+
+      @include mq(sp) {
+        margin: 3.4rem 0 2.5rem;
+      }
+
+      input {
+        display: none;
+        width: initial;
+        height: initial;
+        margin-bottom: 0;
+        padding: 0;
+        cursor: pointer;
+      }
+
+      .agree-lbl {
+        display: inline-block;
+        position: relative;
+        padding: 0 0 0 1.5rem;
+        font-size: 1.3rem;
+        cursor: pointer;
+      }
+
+      .agree-lbl:before {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: -0.5rem;
+        width: 0.9rem;
+        height: 0.9rem;
+        border: 2px solid $color10;
+        background-color: transparent;
+        content: '';
+        cursor: pointer;
+        transform: translateY(-50%);
+        border-radius: 0.4rem;
+        -webkit-appearance: none;
+      }
+
+      input:checked+.agree-lbl:after {
+        position: absolute;
+        top: 50%;
+        left: -0.25rem;
+        width: 0.7rem;
+        height: 0.7rem;
+        background: url('#{$v-img-path}icon/icon_tick.png') no-repeat center/contain;
+        content: '';
+        transform: translateY(-50%);
+      }
+    }
+
+    .app-form-btn {
+      justify-content: center;
+
+      @include mq (sp) {
+        padding: 0;
+      }
+    }
+  }
+}
+
+/* Inquiry Confirm
 -------------------------------------------------------- */
+.sec-inquiry-confirm-form {
 
+  .confirm-form-blk {
+    margin-top: 5.6rem;
+    padding: 3.5rem 0 6rem;
 
-/* general-parts
+    @include mq (sp) {
+      margin-top: 0;
+      padding: 0 0 6rem;
+    }
+
+    tr {
+      .cmn-confirm-txt {
+        width: 62%;
+        line-height: 1.5;
+
+        @include mq (sp) {
+          width: 60%;
+        }
+      }
+
+      &.career-chg {
+        @include mq (sp) {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .cmn-lbl {
+          @include mq (sp) {
+            width: 100%;
+            padding-bottom: 1.5rem;
+          }
+        }
+
+        .cmn-confirm-txt {
+          @include mq (sp) {
+            width: 100%;
+          }
+        }
+      }
+
+    }
+
+    .app-form-btn {
+      margin: 4rem auto 0;
+
+      @include mq (sp) {
+        margin: 3rem auto 0;
+        padding: 0;
+      }
+    }
+  }
+}
+
+/* Inquiry Completed
 -------------------------------------------------------- */
+.sec-inquiry-completed-form {
+  .inquiry-completed {
+    padding: 3.7rem 0 9.7rem;
+    background-color: $color12;
+    text-align: center;
 
+    @include mq (sp) {
+      padding: 0 0 2.7rem;
+      background-color: $white;
+    }
 
-/* tile-list
+    .inquiry-completed-txt {
+      display: block;
+      line-height: 1.4;
+      margin-bottom: 3.2rem;
+      color: $color01;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-align: center;
+      @include m-font();
+
+      @include mq (sp) {
+        margin-bottom: 4.3rem;
+      }
+    }
+
+    .btn-theme-01 {
+      width: 26.5rem;
+      padding: 1.7rem 0;
+
+      @include mq (sp) {
+        width: 96%;
+      }
+    }
+  }
+}
+
+/* Personal Info
 -------------------------------------------------------- */
+.personal-info {
+  height: 19.3rem;
+  padding: 3rem 2.4rem;
+  border: 1px solid $color14;
+  border-radius: 0.4rem;
+  overflow-y: auto;
 
+  .personal-info-ttl {
+    display: inline-block;
+    padding-bottom: 1.2rem;
+    color: $color07;
+    font-size: 1.4rem;
+    font-weight: 700;
+    @include m-font();
+  }
 
-/* contents-box
+  .personal-info-txt {
+    display: block;
+    line-height: 1.6;
+    color: $color07;
+    font-size: 1.2rem;
+    font-weight: 400;
+    @include m-font();
+  }
+
+  .personal-info-txt+.personal-info-txt {
+    padding-top: 1rem;
+  }
+}
+
+/* Login
 -------------------------------------------------------- */
+.sec-login-reminder {
+  line-height: 1.6;
+  padding: 4rem 0 11rem;
+  background-color: $color12;
+  color: $color07;
+  font-weight: 700;
+  @include m-font();
+
+  @include mq(tab_sp) {
+    padding: 2.5rem 0 8rem;
+  }
+
+  .app-form-inner {
+    padding: 0 1.5rem;
+  }
+
+  .cmn-tbl {
+    margin-bottom: 1rem;
+
+    td {
+      width: 36.5rem;
+
+      @include mq(tab_sp) {
+        width: 100%;
+      }
+    }
+
+    .cmn-lbl {
+      padding-top: 0;
+    }
+  }
+
+  .btn-theme-01 {
+    display: block;
+    width: 26.5rem;
+    line-height: 1.2;
+    margin: 0 auto;
+    padding: 1.6rem 0;
+
+    @include mq(tab_sp) {
+      width: 100%;
+    }
+  }
+
+  .err-form-msg {
+    margin-bottom: 4rem;
+
+    @include mq(tab_sp) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .instruction {
+    line-height: 1.65;
+    margin-bottom: 4rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+
+    @include mq(tab_sp) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  .remember {
+    display: block;
+    position: relative;
+    width: 25rem;
+    margin: 0 auto;
+    padding-bottom: 1.8rem;
+    cursor: pointer;
+
+
+    .checkmark {
+      display: inline-block;
+      position: relative;
+      width: 1.3rem;
+      height: 1.3rem;
+      margin-right: 0.8rem;
+      border: 1px solid $color10;
+      background-color: $white;
+      border-radius: 0.3rem;
+    }
+
+    input:checked~.checkmark:after {
+      display: block;
+    }
+
+    .checkmark:after {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0.7rem;
+      height: 0.7rem;
+      background: url('#{$v-img-path}/icon/icon_remember_check.png') no-repeat center/contain;
+      content: "";
+      transform: translate(-50%, -50%);
+    }
+
+  }
+
+  .line-br {
+    position: relative;
+    margin-bottom: 3.8rem;
+    color: $color10;
+    text-align: center;
+
+    @include mq(sp) {
+      margin-bottom: 2.6rem;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      width: 46%;
+      height: 0.1rem;
+      background-color: $color14;
+      content: '';
+      max-width: 27rem;
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+  }
+
+  .page-link {
+    padding: 2rem 0 3.5rem;
+    text-align: center;
+
+    @include mq (tab_sp) {
+      padding: 2rem 0 3rem;
+    }
+  }
+}
+
+.login {
+  .btn-theme-01 {
+    width: 29.5rem;
+
+    @include mq(tab_sp) {
+      width: 100%;
+    }
+  }
+}
+
+/* Reminder Mail
+-------------------------------------------------------- */
+.reminder-content {
+
+  .main-ttl {
+    @include mq(sp) {
+      -webkit-font-feature-settings: "palt"1;
+      font-feature-settings: "palt"1;
+
+      &::before,
+      &::after {
+        width: 3.5rem;
+        height: 5.4rem;
+      }
+    }
+  }
+
+  .cmn-tbl {
+    margin-bottom: 2rem;
+  }
+}
+
+/* Reminder Complete
+-------------------------------------------------------- */
+.reminder-complete {
+  .page-link {
+    padding: 0;
+  }
+
+  .inst-ttl {
+    line-height: 1.5;
+    padding-bottom: 3rem;
+    color: $color01;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+
+    @include mq(tab_sp) {
+      padding-bottom: 2rem;
+    }
+  }
+}
+
+/* Taikai 
+-------------------------------------------------------- */
+.taikai-pg {
+  .taikai-info {
+    padding: 4rem 0 10rem;
+    background-color: $color12;
+
+    @include mq(sp) {
+      padding: 2.5rem 0 8rem;
+    }
+
+    .app-form-inner {
+      @include mq(sp) {
+        padding: 0 1.4rem;
+      }
+
+      .warning-txt {
+        line-height: 1.65;
+        color: $color07;
+        font-size: 1.4rem;
+        font-weight: 400;
+        @include m-font();
+      }
+
+      .warning-txt+.warning-txt {
+        padding-top: 2.2rem;
+      }
+
+      .cmn-tbl {
+        margin-top: 2.7rem;
+
+        @include mq(sp) {
+          margin-top: 1.2rem;
+        }
+
+        .err-msg {
+          display: block;
+          margin-top: 1rem;
+        }
+
+        tr {
+          align-items: baseline;
+
+          th {
+            width: 44.3%;
+
+            @include mq(sp) {
+              width: 100%;
+              margin: 0 auto 0.3rem;
+            }
+
+            @include mq(tab) {
+              width: 100%;
+            }
+
+            .cmn-lbl {
+              span {
+                display: inline-block;
+                padding-top: 1rem;
+                padding-left: 0;
+              }
+            }
+          }
+
+          td {
+            width: 52.1%;
+
+            @include mq(sp) {
+              width: 100%;
+            }
+
+            @include mq(tab) {
+              width: 100%;
+            }
+
+            .rating {
+              display: flex;
+              flex-wrap: wrap;
+              row-gap: 1.8rem;
+              column-gap: 2.1rem;
+
+              @include mq(sp) {
+                margin-top: 0.4rem;
+                column-gap: 2.6rem;
+              }
+            }
+
+            .reasons {
+              .custom-rdo {
+                display: inline-block;
+
+                span {
+                  margin-bottom: 1.5rem;
+
+                  @include mq(sp) {
+                    margin-bottom: 1.8rem;
+                  }
+                }
+              }
+            }
+
+          }
+
+          &:last-child {
+            td {
+              width: 100%;
+
+              .btn-theme-07 {
+                display: block;
+                width: 34.5rem;
+                margin: 1.4rem auto 0;
+                padding: 1.7rem 0;
+
+                @include mq(sp) {
+                  width: 100%;
+                  margin: 1rem auto 0;
+                }
+              }
+            }
+
+          }
+        }
+      }
+
+    }
+
+  }
+}
+
+/* Entry Input
+-------------------------------------------------------- */
+.entry-step {
+  padding: 4rem 0 10rem;
+  background-color: $color12;
+
+  @include mq(sp) {
+    padding: 2.8rem 0 8rem;
+  }
+
+  .app-form-inner {
+
+    .cmn-tbl {
+
+      tr {
+        flex-wrap: wrap;
+        align-items: flex-start;
+        row-gap: 1.5rem;
+
+        th {
+          width: 21.1rem;
+
+          @include mq(tab_sp) {
+            width: 100%;
+          }
+
+          .cmn-lbl {
+            @include mq(tab_sp) {
+              padding: 0;
+            }
+          }
+        }
+
+        td {
+          display: flex;
+          flex-wrap: wrap;
+          width: 36.5rem;
+          row-gap: 1.5rem;
+
+          @include mq(tab) {
+            width: 100%;
+          }
+
+          @include mq(sp) {
+            width: 100%;
+            row-gap: 0.8rem;
+          }
+
+          .custom-rdo {
+            width: 100%;
+
+            span {
+              position: relative;
+              width: 100%;
+              padding: 1.4rem;
+              border: 1px solid $color14;
+              background-color: $white;
+              border-radius: 0.4rem;
+            }
+
+            input[type=radio]:checked+span {
+              color: $color01;
+              border-color: $color01;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Entry Button List 
+-------------------------------------------------------- */
+.entry-btn-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 0 auto;
+  padding-top: 2rem;
+  max-width: 55rem;
+
+  @include mq(sp) {
+    padding-top: 1.3rem;
+    max-width: 100%;
+  }
+
+  li {
+    width: 26.5rem;
+
+    @include mq(sp) {
+      width: 48%;
+    }
+
+    span {
+      display: block;
+      padding-bottom: 1.3rem;
+      color: $color01;
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-align: center;
+      @include m-font();
+
+      @include mq(sp_min) {
+        -webkit-font-feature-settings: "palt"1;
+        font-feature-settings: "palt";
+      }
+    }
+
+    .btn-theme-02,
+    .btn-theme-09 {
+      width: 100%;
+      padding: 1.7rem 0;
+
+      @include mq(sp) {
+        padding: 1.4rem 0;
+      }
+    }
+
+    .btn-theme-02 {
+      &::after {
+        @include mq(sp) {
+          right: 1.3rem;
+        }
+      }
+    }
+  }
+
+}

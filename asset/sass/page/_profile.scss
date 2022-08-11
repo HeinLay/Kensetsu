@@ -1,0 +1,152 @@
+.profile-pg {
+  .sec-profile-confirm {
+    padding: 4.2rem 0 10.4rem;
+    background-color: $color12;
+    text-align: center;
+
+    @include mq(sp) {
+      padding: 2.8rem 0 6.5rem;
+    }
+
+    .app-form-inner {
+      @include mq(sp) {
+        padding: 0 1.4rem;
+      }
+    }
+
+    .profile-hdr {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.8rem;
+
+      @include mq(tab_sp) {
+        flex-direction: column;
+        margin-bottom: 1rem;
+        row-gap: 1.4rem;
+      }
+
+      .err-form-msg {
+        @include mq(tab_sp) {
+          align-self: flex-start;
+        }
+      }
+
+      .lbl-edit {
+        position: relative;
+        line-height: 1.64;
+        color: $color01;
+        font-size: 1.2rem;
+        font-weight: 400;
+        @include m-font();
+
+        @include mq(tab_sp) {
+          align-self: flex-end;
+        }
+
+        &::before {
+          position: absolute;
+          top: 38%;
+          left: -2.2rem;
+          width: 1.6rem;
+          height: 1.6rem;
+          background: url('#{$v-img-path}icon/icon_toggle_edit.png') no-repeat center/contain;
+          content: ' ';
+          transform: translateY(-50%);
+
+          @include mq(sp) {
+            top: 41%;
+            left: -2rem;
+          }
+        }
+      }
+    }
+
+    .profile-content {
+
+      .cmn-tbl {
+        tr {
+          line-height: 1.2;
+          padding: 2.5rem 0 2rem;
+          text-align: left;
+          border-bottom: 1px solid $color14;
+
+          @include mq(tab_sp) {
+            flex-direction: inherit;
+          }
+
+          @include mq(sp) {
+            padding: 2rem 0;
+          }
+
+          .lbl-name {
+            width: 37%;
+
+            @include mq(sp) {
+              width: 40%;
+            }
+
+            .cmn-lbl {
+              padding: 0;
+            }
+
+          }
+
+          .cmn-confirm-txt {
+            width: 65%;
+            padding: 0 1rem;
+
+            @include mq(sp) {
+              width: 62%;
+            }
+
+            &.no-edit-btn {
+              width: 68.6%;
+            }
+
+            span {
+              display: inline-block;
+              vertical-align: middle;
+            }
+
+            .no-select {
+              color: $color01;
+            }
+          }
+
+          .edit-btn {
+            width: 4.7%;
+
+            button {
+              padding: 0;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      .other-pg-link {
+        display: flex;
+        width: 33.8rem;
+        margin: 5.2rem auto 0;
+
+        @include mq(sp) {
+          flex-wrap: wrap;
+          justify-content: center;
+          width: 80%;
+          margin: 4.2rem auto 0;
+        }
+
+        .btn-theme-08+.btn-theme-08 {
+          margin-left: 3.1rem;
+
+          @include mq(sp) {
+            margin-top: 2.1rem;
+            margin-left: 0;
+          }
+        }
+
+      }
+    }
+  }
+}

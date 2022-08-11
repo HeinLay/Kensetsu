@@ -9,7 +9,7 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="description" content="●●●">
   <link rel="canonical" href="https://kensetsu.webpre.net/">
-  <title>あなたにおすすめの求人｜リソシア 建設転職ナビ</title>
+  <title>ログインパスワードをお忘れの方（パスワードを設定される方）｜リソシア 建設転職ナビ</title>
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://kensetsu.webpre.net/" />
   <meta property="og:site_name" content="●●●" />
@@ -57,29 +57,47 @@
   <!-- End Google Tag Manager -->
 </head>
 
-<body id="rcmd-page">
+<body id="reminder-mail-page">
   <!-- Google Tag Manager (noscript) -->
 
   <!-- End Google Tag Manager (noscript) -->
   <!-- ===============  header ============== -->
-  <!--#include FILE="include/header_login.html"-->
-  <main class="content rcmd-page">
-    <section class="sub-pg-mv">
+  <!--#include FILE="include/header.html"-->
+  <main class="content reminder-content">
+    <section class="sub-pg-mv-white">
       <div class="sec-full">
-        <h1 class="sub-pg-ttl">あなたにおすすめの求人</h1>
+        <h1 class="sec-ttl"><span class="main-ttl">ログインパスワード<br class="s-sp">をお忘れの方<br class="s-sp">（パスワードを設定される方）</span></h1>
       </div>
-    </section><!-- /.sub-pg-mv -->
-    <section class="sec-rcmd-job">
+    </section><!-- /.sub-pg-mv-white -->
+    <section class="sec-login-reminder">
       <div class="sec-full">
-        <!-- =============== Recommend Items ============== -->
-        <!--#include FILE="include/parts-recommend-items.html"-->
+        <div class="app-form-inner">
+          <p class="instruction">パスワードをお忘れの方、もしくはパスワードを設定される方は、ご登録メールアドレスを入力し、送信ボタンをク リックしてください。<br>
+            ご登録いただいているメールアドレス宛にパスワード設定用のURLを記述したメールをお送りいたします。<br>
+            24時間以内にアクセスし、設定を完了してください。</p>
+          <table class="cmn-tbl">
+            <tr>
+              <th><label class="cmn-lbl">メールアドレス</label></th>
+              <td>
+                <input type="text" class="cmn-txt">
+              </td>
+            </tr>
+            <tr>
+              <th><label class="cmn-lbl">メールアドレス（確認用）</label></th>
+              <td>
+                <input type="text" class="cmn-txt">
+              </td>
+            </tr>
+          </table>
+          <a href="reminder-complete.html" class="btn-theme-01">送信する</a>
+        </div>
       </div>
-    </section><!-- /.sec-rcmd-job -->
-    <!-- =============== Service Content ============== -->
-    <!--#include FILE="include/service_content.html"-->
+    </section><!-- /.sec-login-reminder -->
+
     <!-- =============== Guide Search ============== -->
     <!--#include FILE="include/guide_search.html"-->
-    <!-- ===============  Breadcrumb ============== -->
+
+    <!-- =============== Breadcrumb ============== -->
     <!--#include FILE="include/parts-breadcrumb.html"-->
   </main>
   <!-- =============== footer ============== -->

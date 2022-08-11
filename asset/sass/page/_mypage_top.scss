@@ -1,0 +1,92 @@
+.sec-my-pg {
+  padding: 10.5rem 0 8.6rem;
+
+  @include mq(sp) {
+    margin: 0 2.5rem;
+    padding: 5.2rem 0;
+  }
+
+  .sec-full {
+    width: 100%;
+  }
+
+  .sec-ttl {
+    margin-bottom: 4.3rem;
+  }
+
+  .mypage-toggle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 55rem;
+    column-gap: 2rem;
+
+    @include mq(sp) {
+      max-width: 100%;
+    }
+
+    .btn {
+      position: relative;
+      width: 26.5rem;
+      margin-bottom: 1.6rem;
+      padding: 1.6rem 1rem;
+      border: 1px solid $color01;
+      color: $color07;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 2.9rem;
+      @include m-font();
+
+      @include mq(sp) {
+        width: 100%;
+        margin: 0 auto 1.2rem;
+        max-width: 32.5rem;
+      }
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 2.5rem;
+        width: 1.7rem;
+        height: 1.7rem;
+        content: "";
+        transform: translateY(-50%);
+      }
+    }
+
+    .btn.hdr-search-btn::before {
+      background: url('#{$v-img-path}icon/icon_toggle_search.png') no-repeat center/contain;
+    }
+
+    .btn.hdr-history-btn::before {
+      width: 1.9rem;
+      height: 1.9rem;
+      background: url('#{$v-img-path}icon/icon_toggle_cloud.png') no-repeat center/contain;
+    }
+
+    .btn.hdr-list-btn::before {
+      width: 1.7rem;
+      height: 1.6rem;
+      background: url('#{$v-img-path}icon/icon_toggle_star.png') no-repeat center/contain;
+    }
+
+    .btn.hdr-register-btn::before {
+      width: 1.6rem;
+      height: 1.6rem;
+      background: url('#{$v-img-path}icon/icon_toggle_edit.png') no-repeat center/contain;
+    }
+  }
+}
+
+.mypage {
+  .sec-rcmd-job {
+    margin-top: 0rem;
+
+    @include mq(sp) {
+      padding-top: 8.4rem;
+    }
+  }
+}

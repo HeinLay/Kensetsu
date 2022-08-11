@@ -3,32 +3,6 @@ search.css
 ======================================================== */
 /* Search
 -------------------------------------------------------- */
-#sp-campaign-id {
-  .sub-pg-mv {
-    padding: 5rem 0 3.8rem;
-  }
-
-  .search-result {
-    .search-sidebar {
-      .search-bar {
-        &::before {
-          display: none;
-        }
-
-        .search-btn {
-          margin: 0 auto;
-        }
-      }
-    }
-
-    .search-main {
-      .top-row {
-        padding-top: 4rem;
-      }
-    }
-  }
-}
-
 .search-page {
 
   .popup-btn {
@@ -166,11 +140,11 @@ search.css
       line-height: 1.21;
       margin-bottom: 1.3rem;
       padding: 0 0.9rem;
+      color: $color07;
       font-size: 1.6rem;
       font-weight: 700;
       border-left: 2px solid $color01;
       @include m-font();
-
     }
 
     .tag {
@@ -399,6 +373,7 @@ search.css
             .txt {
               line-height: 1.35;
               padding-top: 0.5rem;
+              color: $color07;
               font-size: 1.8rem;
               font-weight: 700;
               letter-spacing: 0.015rem;
@@ -446,6 +421,7 @@ search.css
               .inner-ttl {
                 line-height: 1.35;
                 margin-bottom: 1.2rem;
+                color: $color07;
                 font-size: 1.6rem;
                 font-weight: 700;
                 letter-spacing: 0.015rem;
@@ -477,10 +453,14 @@ search.css
 
               .data-row {
                 .desc-txt {
+                  display: -webkit-box;
                   line-height: 1.65;
+                  overflow: hidden;
                   color: $color07;
                   font-weight: 400;
                   letter-spacing: 0.06rem;
+                  -webkit-line-clamp: 4;
+                  -webkit-box-orient: vertical;
                 }
 
                 .experiences {
@@ -524,7 +504,7 @@ search.css
           .btn-theme-03 {
             width: 14.8rem;
             margin-right: 0.9rem;
-            //padding: 0.8rem 0;
+            box-shadow: none;
             font-size: 1.4rem;
 
             @include mq(sp_min) {
@@ -539,8 +519,8 @@ search.css
 
           .btn-theme-02 {
             width: 14.8rem;
+            box-shadow: none;
             font-size: 1.4rem;
-
 
             @include mq(sp_min) {
               width: 13rem;
@@ -554,6 +534,7 @@ search.css
           .btn-theme-06 {
             width: 16rem;
             margin-right: 0.9rem;
+            box-shadow: none;
             font-size: 1.4rem;
 
             @include mq(sp) {
@@ -649,12 +630,14 @@ search.css
         .img-blk {
           display: flex;
           align-items: center;
+          color: $color07;
+          font-weight: 700;
         }
 
         .change-link {
           line-height: 1.5;
           color: $color01;
-          font-size: 1.6rem;
+          font-size: 1.4rem;
           font-weight: 400;
           text-decoration: underline;
           @include m-font();
@@ -686,7 +669,36 @@ search.css
       .search-btn {
         width: 76.4%;
         margin: 1.8rem auto 0;
+        padding: 1.9rem 0;
         max-width: 22rem;
+      }
+    }
+  }
+}
+
+.sp-campaign-id {
+  .sub-pg-mv {
+    padding: 5rem 0 3.8rem;
+  }
+
+  .search-result {
+    .search-sidebar {
+      .search-bar {
+        &::before {
+          display: none;
+        }
+
+        .search-btn {
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .search-main {
+      .top-row {
+        @include mq(sp) {
+          padding-top: 4rem;
+        }
       }
     }
   }

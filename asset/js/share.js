@@ -255,12 +255,15 @@ $(function () {
 });
 
 // Button List
-var hdrHeight = $('.header-theme').outerHeight();
-var height = parseInt($('.sec-search-box').offset().top + hdrHeight);
-$(window).scroll(function () {
-  if ($(this).scrollTop() > height) {
-    $('.btn-list').fadeIn();
-  } else {
-    $('.btn-list').fadeOut();
-  }
-});
+if (window.location.pathname == "/" || window.location.pathname == "/index.html"
+  || window.location.pathname == "/top-login.html") {
+  var hdrHeight = $('.header-theme').outerHeight();
+  var height = $('.sec-search-box').offset().top + hdrHeight;
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > height) {
+      $('.btn-list').fadeIn();
+    } else {
+      $('.btn-list').fadeOut();
+    }
+  });
+}

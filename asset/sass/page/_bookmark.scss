@@ -1,26 +1,22 @@
-#bookmark-page {
+.bookmark {
   .search-result {
-    padding: 4.2rem 0 7.2rem;
+    padding: 4rem 0 8rem;
 
     @include mq(sp) {
-      padding: 1.8rem 0 4.1rem;
+      padding: 2.3rem 0 4.1rem;
     }
 
     .bookmark-btn-gp {
-      width: 100%;
+      width: 92%;
       margin: 0 auto;
       text-align: right;
       max-width: 70.5rem;
-
-      @include mq(sp) {
-        width: 92%;
-      }
 
       .bm-clear,
       .bm-select {
         position: relative;
         line-height: 1.6;
-        padding: 0.2rem 1.2rem;
+        padding: 0.3rem 1.1rem 0.3rem 2.4rem;
         border: 1px solid $color14;
         background-color: $white;
         color: $color07;
@@ -31,34 +27,44 @@
       }
 
       .bm-clear {
+        margin-right: 0.6rem;
+      }
+
+      .bm-clear,
+      .bm-select {
         &::before {
-          display: inline-block;
+          position: absolute;
+          top: 50%;
+          left: 1rem;
+          content: '';
+          transform: translateY(-50%);
+        }
+      }
+
+      .bm-clear {
+        &::before {
           width: 0.9rem;
           height: 0.9rem;
-          margin-right: 0.4rem;
           background: url('#{$v-img-path}icon/icon_clear.png') no-repeat center/contain;
-          content: '';
         }
       }
 
       .bm-select {
         &::before {
-          display: inline-block;
           width: 1rem;
           height: 0.9rem;
-          margin-right: 0.4rem;
           background: url('#{$v-img-path}icon/icon_select_all.png') no-repeat center/contain;
-          content: '';
         }
       }
     }
 
     .search-main {
+      width: 92%;
       margin: 0 auto;
       padding-top: 2rem;
 
-      @include mq(sp) {
-        width: 92%;
+      .top-row {
+        padding-bottom: 0;
       }
 
       .result-list {
@@ -76,19 +82,9 @@
               width: 26.5rem;
               padding: 1.7rem 0;
               font-size: 1.5rem;
-            }
-          }
 
-          .result-info {
-            .result-heading {
-              .top-row {
-                display: flex;
-                justify-content: space-between;
+              @include mq(sp) {
                 width: 100%;
-
-                .txt {
-                  display: block;
-                }
               }
             }
           }
@@ -96,54 +92,44 @@
       }
     }
   }
-}
 
-.right {
-  display: block;
-  position: relative;
-  width: 1.8rem;
-  height: 1.8rem;
-  cursor: pointer;
-
-  @include mq(sp) {
-    margin-top: -1rem;
-    margin-right: -1rem;
-  }
-
-  input {
-    position: absolute;
-    width: 0;
-    height: 0;
+  .right {
+    display: block;
+    position: relative;
+    width: 1.8rem;
+    height: 1.8rem;
     cursor: pointer;
-    opacity: 0;
+
+    @include mq(sp) {
+      margin-top: -2.1rem;
+      margin-right: -1.1rem;
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1.8rem;
+      height: 1.8rem;
+      border: 1px solid $color01;
+      border-radius: 0.3rem;
+    }
+
+    input:checked~.checkmark {
+      background-color: $color01;
+    }
+
+    .checkmark:after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 1rem;
+      height: 0.9rem;
+      background: url('#{$v-img-path}icon/icon_check.png') no-repeat center/contain;
+      content: "";
+      transform: translate(-50%, -50%);
+    }
+
   }
-}
 
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1.8rem;
-  height: 1.8rem;
-  border: 1px solid $color01;
-  border-radius: 0.3rem;
-}
-
-.right input:checked~.checkmark {
-  background-color: $color01;
-}
-
-.right input:checked~.checkmark:after {
-  display: block;
-}
-
-.right .checkmark:after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 1rem;
-  height: 0.9rem;
-  background: url('#{$v-img-path}icon/icon_check.png') no-repeat center/contain;
-  content: "";
-  transform: translate(-50%, -50%);
 }
