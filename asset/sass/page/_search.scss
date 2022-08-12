@@ -140,18 +140,11 @@ search.css
       line-height: 1.21;
       margin-bottom: 1.3rem;
       padding: 0 0.9rem;
-      color: $color07;
       font-size: 1.6rem;
       font-weight: 700;
       border-left: 2px solid $color01;
       @include m-font();
-    }
-
-    .tag {
-      &:hover {
-        background-color: $color01;
-        color: $white;
-      }
+      color: $color07;
     }
   }
 
@@ -373,11 +366,11 @@ search.css
             .txt {
               line-height: 1.35;
               padding-top: 0.5rem;
-              color: $color07;
               font-size: 1.8rem;
               font-weight: 700;
               letter-spacing: 0.015rem;
               @include m-font();
+              color: $color07;
             }
 
           }
@@ -421,11 +414,11 @@ search.css
               .inner-ttl {
                 line-height: 1.35;
                 margin-bottom: 1.2rem;
-                color: $color07;
                 font-size: 1.6rem;
                 font-weight: 700;
                 letter-spacing: 0.015rem;
                 @include m-font();
+                color: $color07;
               }
 
               .desc-ttl {
@@ -519,8 +512,8 @@ search.css
 
           .btn-theme-02 {
             width: 14.8rem;
-            box-shadow: none;
             font-size: 1.4rem;
+            box-shadow: none;
 
             @include mq(sp_min) {
               width: 13rem;
@@ -534,8 +527,8 @@ search.css
           .btn-theme-06 {
             width: 16rem;
             margin-right: 0.9rem;
-            box-shadow: none;
             font-size: 1.4rem;
+            box-shadow: none;
 
             @include mq(sp) {
               width: 15rem;
@@ -630,8 +623,8 @@ search.css
         .img-blk {
           display: flex;
           align-items: center;
-          color: $color07;
           font-weight: 700;
+          color: $color07;
         }
 
         .change-link {
@@ -669,8 +662,8 @@ search.css
       .search-btn {
         width: 76.4%;
         margin: 1.8rem auto 0;
-        padding: 1.9rem 0;
         max-width: 22rem;
+        padding: 1.9rem 0;
       }
     }
   }
@@ -678,7 +671,9 @@ search.css
 
 .sp-campaign-id {
   .sub-pg-mv {
-    padding: 5rem 0 3.8rem;
+    @include mq(sp) {
+      padding: 5rem 0 3.8rem;
+    }
   }
 
   .search-result {
@@ -696,7 +691,7 @@ search.css
 
     .search-main {
       .top-row {
-        @include mq(sp) {
+        @include mq(sp){
           padding-top: 4rem;
         }
       }

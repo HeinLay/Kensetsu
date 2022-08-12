@@ -351,10 +351,10 @@ content.css
         padding: 3rem 2.5rem 1rem;
 
         .rcmd-ttl {
-          color: $color07;
           font-size: 1.8rem;
           font-weight: 700;
           @include m-font();
+          color: $color07;
         }
 
         .info {

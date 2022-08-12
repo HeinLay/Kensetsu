@@ -151,11 +151,40 @@
           </div>
         </div>
         <div class="app-form-btn">
-          <a href="#" class="btn-theme-01">送信する</a>
-          <a href="#" class="btn-theme-05">前の画面に戻る</a>
+          <a href="#" class="btn-theme-01 jsModalOpen" data-modal="logout-alert">送信する</a>
+          <a href="job-entry-input.html" class="btn-theme-05">前の画面に戻る</a>
         </div>
       </div>
     </section><!-- /.sec-confirm-form-->
+    <div id="logout-alert" class="modal regist-modal jsModal logout-alert">
+      <div class="modal-bg jsModalClose"></div>
+      <div class="modal-content">
+        <div class="modal-panel">
+          <div class="modal-header regist-modal-header">
+            <a href="javascript:void(0);" class="modal-close-btn jsModalClose">
+              <img src="./asset/img/icon/icon_modal_close.png" alt="" width="36" height="36" loading="lazy"
+                class="s-pc">
+              <img src="./asset/img/icon/icon_close_bar.png" alt="" width="58" height="3" loading="lazy" class="s-sp">
+            </a>
+          </div>
+          <div class="modal-txt">
+            <div class="app-form-inner sec-appform">
+              <span class="alert-img">
+                <img src="./asset/img/icon/icon_alert.png" alt="" width="27" height="29" loading="lazy">
+              </span>
+              <span class="alert-ttl">求人応募をご利用するには<br>無料転職支援サービス登録が必要になります。</span>
+              <p class="cmn-lbl service-desc">無料転職支援サービス登録がまだの求職者様は<br />
+                「無料転職支援サービス登録」ボタンをクリックし登録を行い応募ください。<br />
+                すでに登録済の方はログインボタンをクリックし応募ください。</p>
+              <div class="app-form-btn">
+                <a href="login.html" class="btn-theme-01">ログイン</a>
+              </div>
+              <a href="pre-entry-step-input.html" class="register-link">無料転職支援サービスに登録</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /#logout-alert -->
   </main>
   <!-- =============== Guide Search ============== -->
   <!--#include FILE="include/guide_search.html"-->

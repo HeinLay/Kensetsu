@@ -220,15 +220,30 @@ $(document).ready(function () {
 $(function () {
   $('.jsModalOpen').each(function () {
     $(this).on('click', function () {
-      $('#' + $(this).data('modal')).fadeIn();
+      if ($(window).width() < 767) {
+        $('#' + $(this).data('modal')).slideToggle();
+      }
+      else {
+        $('#' + $(this).data('modal')).fadeIn();
+      }
     });
   });
   $('.jsModalClose').on('click', function () {
-    $(this).parents('.modal').fadeOut();
+    if ($(window).width() < 767) {
+      $(this).parents('.modal').slideToggle();
+    }
+    else {
+      $(this).parents('.modal').fadeOut();
+    }
     return false;
   });
   $('.cat-form-btn .btn-theme-04').on('click', function () {
-    $(this).parents('.modal').fadeOut();
+    if ($(window).width() < 767) {
+      $(this).parents('.modal').slideToggle();
+    }
+    else {
+      $(this).parents('.modal').fadeOut();
+    }
     return false;
   });
 });

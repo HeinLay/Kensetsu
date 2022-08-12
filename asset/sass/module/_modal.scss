@@ -11,6 +11,222 @@ modal.css
   z-index: 2000;
   width: 100%;
   height: 100vh;
+
+  @include mq (sp) {
+    top: unset;
+    bottom: 0;
+  }
+}
+
+.regist-modal {
+  .modal-content {
+    @include mq (sp) {
+      top: 50%;
+      bottom: 0;
+    }
+
+    .l-modal-panel {
+      height: 60.7rem;
+    }
+
+    .modal-panel {
+      width: 75.6rem;
+
+      @include mq (sp) {
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        overflow-y: auto;
+      }
+
+      .modal-txt {
+        padding: 0 0 7.5rem;
+
+        @include mq (sp) {
+          height: auto;
+          padding: 1.7rem 0 6rem;
+        }
+      }
+
+      .modal-header {
+        width: 92%;
+        padding: 4rem 0;
+
+        @include mq (sp) {
+          padding: 2rem 0;
+        }
+
+        .modal-close-btn {
+          @include mq (sp) {
+            left: 0;
+            width: 5.8rem;
+            margin: 0 auto;
+          }
+        }
+      }
+
+      .cmn-tbl {
+        tr {
+          padding-bottom: 3rem;
+
+          @include mq(sp) {
+            padding-bottom: 1.3rem;
+          }
+
+          @include mq (tab) {
+            flex-direction: row;
+          }
+
+          th {
+            @include mq (tab) {
+              width: 34%;
+            }
+          }
+
+          td {
+            @include mq (tab) {
+              width: 63.4%;
+            }
+          }
+        }
+      }
+
+      .regist-info-ttl {
+        display: block;
+        line-height: 1.4;
+        padding-bottom: 3.3rem;
+        font-size: 2.6rem;
+        font-weight: 700;
+        text-align: center;
+        @include m-font();
+
+        @include mq (sp) {
+          padding-bottom: 0.1rem;
+          font-size: 2rem;
+        }
+      }
+
+      .cmn-lbl {
+        line-height: 1.4;
+        font-feature-settings: "palt";
+      }
+
+      .custom-rdo {
+        width: 100%;
+        padding: 1.3rem;
+        border: 1px solid $color14;
+        border-radius: 0.4rem;
+      }
+
+      .income-input {
+        justify-content: flex-start;
+        align-items: center;
+
+        @include mq (sp) {
+          width: 19.1rem;
+          column-gap: 0;
+        }
+
+        input {
+          width: 80%;
+
+          @include mq (sp) {
+            width: 15.7rem;
+          }
+        }
+
+        .unit {
+          padding-left: 0.5rem;
+          color: $color07;
+          font-family: "Hiragino Kaku Gothic Pro";
+          font-size: 1.3rem;
+          font-weight: 700;
+        }
+      }
+
+      .app-form-btn {
+        margin: 1.2rem auto 0;
+
+        @include mq(sp) {
+          margin: 1.7rem auto 0;
+        }
+      }
+
+      .qualification-name {
+        display: flex;
+        flex-direction: row;
+
+        .cmn-lbl {
+          width: 48%;
+        }
+      }
+
+      .service-desc {
+        line-height: 1.7;
+        padding-top: 0.8rem;
+        padding-bottom: 1.8rem;
+        font-size: 1.4rem;
+        font-weight: 400;
+        text-align: center;
+
+        @include mq(sp) {
+          padding-bottom: 3.4rem;
+          text-align: left;
+        }
+      }
+    }
+
+    .app-form-btn {
+      @include mq (sp) {
+        flex-direction: column-reverse;
+        padding: 0;
+      }
+    }
+  }
+
+  &.service-modal,
+  &.mail-modal {
+    .modal-panel {
+      .regist-info-ttl {
+        padding-bottom: 1.2rem;
+      }
+
+      .modal-txt {
+        padding: 6rem 0 14rem;
+
+        @include mq(sp) {
+          padding: 3.9rem 0 8rem;
+        }
+
+        .app-form-inner {
+          @include mq() {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .err-msg {
+    line-height: 1.64;
+    padding-left: 1rem;
+
+    span {
+      display: inline-block;
+      text-indent: -1rem;
+    }
+  }
+
+  .register-link {
+    display: block;
+    color: $color01;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.8;
+    text-decoration: underline;
+  }
 }
 
 .modal-bg {
@@ -60,17 +276,6 @@ modal.css
       box-shadow: $header-shadow;
       @include m-font();
 
-      div {
-        display: flex;
-        position: relative;
-        justify-content: space-between;
-        align-items: center;
-        width: 89%;
-        margin: 0 auto;
-        padding: 2.5rem 0;
-        max-width: 80rem;
-      }
-
       .search-conditions-ttl {
         color: $color07;
         font-size: 2rem;
@@ -103,8 +308,18 @@ modal.css
       }
     }
 
+    .modal-header {
+      display: flex;
+      position: relative;
+      justify-content: space-between;
+      align-items: center;
+      width: 89%;
+      margin: 0 auto;
+      padding: 2.5rem 0;
+      max-width: 80rem;
+    }
+
     .modal-txt {
-      line-height: 1.6;
       padding: 2rem 0 5rem;
       color: $color07;
       overflow-y: auto;
@@ -392,4 +607,50 @@ modal.css
   top: 50%;
   right: 0;
   transform: translateY(-50%);
+}
+
+.logout-alert {
+  text-align: center;
+  .modal-content {
+    .modal-panel {
+      .modal-txt {
+        padding: 2rem 0 10rem;
+    
+        @include mq(sp) {
+    
+        }
+  
+        .alert-img {
+          display: block;
+          margin-bottom: 1.6rem;
+          text-align: center;
+        }
+    
+        .alert-ttl {
+          display: block;
+          line-height: 1.4;
+          padding-bottom: 1.5rem;
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: $color08;
+          @include m-font();
+        }
+
+        .service-desc {
+          @include mq(sp) {
+            padding: 0;
+          }
+        }
+
+        .app-form-btn {
+          justify-content: center;
+          margin: 1.2rem auto 1rem;
+
+          .btn-theme-01 {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
 }
