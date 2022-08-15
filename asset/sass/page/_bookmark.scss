@@ -1,135 +1,140 @@
 .bookmark {
-  .search-result {
-    padding: 4rem 0 8rem;
+	.search-result {
+		padding: 4rem 0 8rem;
 
-    @include mq(sp) {
-      padding: 2.3rem 0 4.1rem;
+		@include mq(sp) {
+			padding: 2.3rem 0 4.1rem;
+		}
+
+		.bookmark-btn-gp {
+			width: 92%;
+			margin: 0 auto;
+			text-align: right;
+			max-width: 70.5rem;
+
+			.bm-clear,
+			.bm-select {
+				position: relative;
+				line-height: 1.6;
+				padding: 0.3rem 1.1rem 0.3rem 2.4rem;
+				border: 1px solid $color14;
+				background-color: $white;
+				color: $color07;
+				font-size: 1.2rem;
+				font-weight: 700;
+				border-radius: 3.4rem;
+				@include m-font();
+			}
+
+			.bm-clear {
+				margin-right: 0.6rem;
+			}
+
+			.bm-clear,
+			.bm-select {
+				&::before {
+					position: absolute;
+					top: 50%;
+					left: 1rem;
+					content: "";
+					transform: translateY(-50%);
+				}
+			}
+
+			.bm-clear {
+				&::before {
+					width: 0.9rem;
+					height: 0.9rem;
+					background: url('#{$v-img-path}icon/icon_clear.png') no-repeat center/contain;
+				}
+			}
+
+			.bm-select {
+				&::before {
+					width: 1rem;
+					height: 0.9rem;
+					background: url('#{$v-img-path}icon/icon_select_all.png') no-repeat center/contain;
+				}
+			}
+		}
+
+		.search-main {
+			width: 92%;
+			margin: 0 auto;
+			padding-top: 2rem;
+
+			.top-row {
+				padding-bottom: 0;
+			}
+
+			.result-list {
+				.result {
+					@include mq(sp) {
+						padding: 2.5rem 0 2.7rem;
+					}
+
+					&.selected {
+						border: 1px solid $color01;
+					}
+
+					.btn-gp {
+						.btn-theme-02 {
+							width: 26.5rem;
+							padding: 1.6rem 0;
+							font-size: 1.5rem;
+
+							@include mq(sp) {
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.right {
+		display: block;
+		position: relative;
+		width: 1.8rem;
+		height: 1.8rem;
+		cursor: pointer;
+
+		@include mq(sp) {
+			margin-top: -2.1rem;
+			margin-right: -1.1rem;
+		}
+
+		.checkmark {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 1.8rem;
+			height: 1.8rem;
+			border: 1px solid $color01;
+			border-radius: 0.3rem;
+		}
+
+		input:checked~.checkmark:after {
+      display: block;
     }
 
-    .bookmark-btn-gp {
-      width: 92%;
-      margin: 0 auto;
-      text-align: right;
-      max-width: 70.5rem;
+		input:checked ~ .checkmark {
+			background-color: $color01;
+		}
 
-      .bm-clear,
-      .bm-select {
-        position: relative;
-        line-height: 1.6;
-        padding: 0.3rem 1.1rem 0.3rem 2.4rem;
-        border: 1px solid $color14;
-        background-color: $white;
-        color: $color07;
-        font-size: 1.2rem;
-        font-weight: 700;
-        border-radius: 3.4rem;
-        @include m-font();
-      }
+		.checkmark:after {
+			display: none;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 1rem;
+			height: 0.9rem;
+			background: url('#{$v-img-path}icon/icon_check.png') no-repeat center/contain;
+			content: "";
+			transform: translate(-50%, -50%);
+		}
 
-      .bm-clear {
-        margin-right: 0.6rem;
-      }
-
-      .bm-clear,
-      .bm-select {
-        &::before {
-          position: absolute;
-          top: 50%;
-          left: 1rem;
-          content: '';
-          transform: translateY(-50%);
-        }
-      }
-
-      .bm-clear {
-        &::before {
-          width: 0.9rem;
-          height: 0.9rem;
-          background: url('#{$v-img-path}icon/icon_clear.png') no-repeat center/contain;
-        }
-      }
-
-      .bm-select {
-        &::before {
-          width: 1rem;
-          height: 0.9rem;
-          background: url('#{$v-img-path}icon/icon_select_all.png') no-repeat center/contain;
-        }
-      }
-    }
-
-    .search-main {
-      width: 92%;
-      margin: 0 auto;
-      padding-top: 2rem;
-
-      .top-row {
-        padding-bottom: 0;
-      }
-
-      .result-list {
-        .result {
-          @include mq(sp) {
-            padding: 2.5rem 0 2.7rem;
-          }
-
-          &.selected {
-            border: 1px solid $color01;
-          }
-
-          .btn-gp {
-            .btn-theme-02 {
-              width: 26.5rem;
-              padding: 1.7rem 0;
-              font-size: 1.5rem;
-
-              @include mq(sp) {
-                width: 100%;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .right {
-    display: block;
-    position: relative;
-    width: 1.8rem;
-    height: 1.8rem;
-    cursor: pointer;
-
-    @include mq(sp) {
-      margin-top: -2.1rem;
-      margin-right: -1.1rem;
-    }
-
-    .checkmark {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 1.8rem;
-      height: 1.8rem;
-      border: 1px solid $color01;
-      border-radius: 0.3rem;
-    }
-
-    input:checked~.checkmark {
-      background-color: $color01;
-    }
-
-    .checkmark:after {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 1rem;
-      height: 0.9rem;
-      background: url('#{$v-img-path}icon/icon_check.png') no-repeat center/contain;
-      content: "";
-      transform: translate(-50%, -50%);
-    }
-
-  }
+	}
 
 }

@@ -27,7 +27,7 @@
     width: 1.6rem;
     height: 1.7rem;
     background: url('#{$v-img-path}icon/icon_error.png') no-repeat center/contain;
-    content: '';
+    content: "";
     transform: translateY(-50%);
   }
 }
@@ -144,10 +144,23 @@ textarea {
 -------------------------------------------------------- */
 .custom-chk {
   display: inline-block;
+  position: relative;
   width: 100%;
-  padding: 1.3rem;
+  padding: 1.4rem 1rem;
   border: 1px solid $color14;
   border-radius: 0.4rem;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 1px solid $color14;
+    content: '';
+    transform: translateY(-50%);
+    border-radius: 50%;
+  }
 }
 
 input[type="checkbox"] {
@@ -157,22 +170,6 @@ input[type="checkbox"] {
   margin-bottom: 0;
   padding: 0;
   cursor: pointer;
-}
-
-.custom-chk {
-  position: relative;
-}
-
-.custom-chk:before {
-  position: absolute;
-  top: 50%;
-  left: 1rem;
-  width: 1.4rem;
-  height: 1.4rem;
-  border: 1px solid $color14;
-  content: '';
-  transform: translateY(-50%);
-  border-radius: 50%;
 }
 
 input[type=checkbox]:checked+.custom-chk:before {
@@ -187,7 +184,7 @@ input[type=checkbox]:checked+.custom-chk:after {
   width: 1.6rem;
   height: 1.6rem;
   background: url('#{$v-img-path}icon/icon_modal_tick.png') no-repeat center/contain;
-  content: '';
+  content: "";
   transform: translateY(-50%);
 }
 

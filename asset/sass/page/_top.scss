@@ -7,7 +7,7 @@
 	padding-bottom: 0.9rem;
 	font-size: 1.7rem;
 	font-weight: 700;
-	letter-spacing: 0.1rem;
+	letter-spacing: 0;
 	@include m-font();
 
 	@include mq (tab) {
@@ -16,7 +16,7 @@
 
 	.total-num {
 		display: inline-block;
-		padding-left: 1.2rem;
+		padding-left: 0.5rem;
 		font-size: 3.8rem;
 		font-weight: 700;
 		vertical-align: text-bottom;
@@ -40,6 +40,10 @@
 	font-weight: 400;
 	letter-spacing: 0;
 	@include m-font();
+
+	@include mq (sp) {
+    padding-bottom: 0;
+  }
 }
 
 .mainvisual {
@@ -90,6 +94,7 @@
 		position: absolute;
 		top: 50%;
 		left: 92.8%;
+		box-shadow: $pc-mv-card-shadow;
 		flex-direction: column;
 		align-items: center;
 		width: 56.5%;
@@ -102,13 +107,13 @@
 		@include m-font();
 
 		@include mq (sp) {
-			top: 67%;
-			left: 50%;
-			width: 92%;
-			padding: 1.9rem 1rem 2.5rem;
-			box-shadow: $mv-card-shadow;
-			transform: translateX(-50%);
-		}
+      top: 100%;
+      left: 50%;
+      width: 92%;
+      padding: 1.9rem 1rem 2.5rem;
+      box-shadow: $sp-mv-card-shadow;
+      transform: translate(-50%, -50%);
+    }
 
 		.guide-btn {
 			position: relative;
@@ -159,7 +164,7 @@
 				width: 100%;
 				height: 100%;
 				background: $color01;
-				content: '';
+				content: "";
 				transform: scale(0, 1);
 				transform-origin: right top;
 				transition: transform 0.6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
@@ -172,7 +177,7 @@
 				width: 1.6rem;
 				height: 1.9rem;
 				background: url('#{$v-img-path}icon/icon_guide.png')no-repeat center/cover;
-				content: '';
+				content: "";
 				transform: translateY(-50%);
 				;
 			}
@@ -217,7 +222,7 @@
 		width: 2rem;
 		height: 2rem;
 		background: url('#{$v-img-path}icon/icon_media_arr.png') no-repeat center/contain;
-		content: '';
+		content: "";
 		transform: translateY(-50%);
 
 		@include mq(sp) {
@@ -278,11 +283,10 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		padding-top: 5.8rem;
+		padding-top: 1.5rem;
 
 		@include mq(sp) {
 			justify-content: flex-start;
-			padding-top: 3rem;
 		}
 
 		.merit-col {
@@ -320,6 +324,7 @@
 					width: 24.8rem;
 					height: 16.8rem;
 					background: url('#{$v-img-path}top/img_merit_01.png');
+					box-shadow: $m-btn-shadow;
 					background-size: 455px 305px;
 					background-position: 77% 61%;
 					background-repeat: no-repeat;
@@ -341,6 +346,7 @@
 					width: 24.8rem;
 					height: 16.8rem;
 					background: url('#{$v-img-path}top/img_merit_02.png');
+					box-shadow: $m-btn-shadow;
 					background-size: 465px 320px;
 					background-position: 36% 88%;
 					background-repeat: no-repeat;
@@ -362,6 +368,7 @@
 					width: 24.8rem;
 					height: 16.8rem;
 					background: url('#{$v-img-path}top/img_merit_03.png');
+					box-shadow: $m-btn-shadow;
 					background-size: 416px 295px;
 					background-position: 70% 87%;
 					background-repeat: no-repeat;
@@ -383,6 +390,7 @@
 					width: 24.8rem;
 					height: 16.8rem;
 					background: url('#{$v-img-path}top/img_merit_04.png');
+					box-shadow: $m-btn-shadow;
 					background-size: 346px 230px;
 					background-position: 50% 25%;
 					background-repeat: no-repeat;
@@ -547,7 +555,7 @@
 					font-size: 1.6rem;
 					font-weight: 700;
 					text-align: center;
-					letter-spacing: 0.3rem;
+					letter-spacing: 0.15rem;
 					border-radius: 1rem;
 					@include m-font();
 
@@ -585,22 +593,24 @@
 				}
 
 				.select-cat {
-					display: none;
-					position: absolute;
-					top: -13.7%;
-					left: -4.2%;
-					padding: 0.2rem 0.7rem;
-					background-color: $color01;
-					color: $white;
-					font-size: 1rem;
-					letter-spacing: 0;
-					border-radius: 2.9rem;
+          display: none;
+          position: absolute;
+          top: -13.7%;
+          left: -4.2%;
+          padding: 0.4rem 0.5rem;
+          background-color: $color01;
+          color: $white;
+          font-size: 1rem;
+          font-weight: 700;
+          letter-spacing: 0.1;
+          border-radius: 2.9rem;
+          @include m-font();
 
-					@include mq (sp) {
-						top: -5.4%;
-						font-size: 0.9rem;
-					}
-				}
+          @include mq (sp) {
+            top: -5.4%;
+            font-size: 0.9rem;
+          }
+        }
 
 				.active {
 					display: block;
@@ -629,6 +639,7 @@
 				box-shadow: $ui-shadow;
 				font-size: 1.6rem;
 				font-weight: 400;
+				background: $white url('#{$v-img-path}icon/icon_job_search.png') no-repeat center left 2.2rem/2.2rem;
 				outline: none;
 				border-radius: 1rem;
 				@include m-font();
@@ -637,22 +648,7 @@
 					width: 93%;
 					margin: 0 auto;
 					padding: 1.5rem 1rem 1.5rem 4.9rem;
-				}
-			}
-
-			&::before {
-				position: absolute;
-				top: 50%;
-				left: 2.2%;
-				width: 1.9rem;
-				height: 1.9rem;
-				background: url('#{$v-img-path}icon/icon_job_search.png') no-repeat center/contain;
-				content: '';
-				transform: translateY(-50%);
-
-				@include mq (sp) {
-					top: 17%;
-					left: 3.2rem;
+					background-position-x: 1.5rem;
 				}
 			}
 		}
@@ -723,47 +719,23 @@
 			}
 
 			.news-arrow {
-				position: absolute;
-				top: 50%;
-				right: 3.3rem;
-				width: 1.7rem;
-				height: 1.7rem;
-				box-sizing: border-box;
-				background: $color01;
-				content: '';
-				transform: translateY(-50%);
-				transition: all 0.4s;
-				border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        right: 3.3rem;
+        width: 1.7rem;
+        height: 1.7rem;
+        transform: translateY(-50%);
+        transition: all 0.4s;
 
-				@include mq(sp) {
-					display: none;
-				}
+        @include mq(sp) {
+          display: none;
+        }
+      }
 
-				span {
-					display: block;
-					position: relative;
-					width: 100%;
-					height: 100%;
-
-					&::before {
-						position: absolute;
-						top: 50%;
-						right: 0;
-						left: 0;
-						width: 0.6rem;
-						height: 0.6rem;
-						margin: 0 auto;
-						background: url("#{$v-img-path}icon/icon_list_btn_hover.png") no-repeat center/contain;
-						content: '';
-						transform: translateY(-50%);
+			&:hover {
+					.news-arrow{
+						right: 2rem;
 					}
-				}
-			}
-		}
-
-		&:hover {
-			.news-arrow {
-				right: 2rem;
 			}
 		}
 	}
@@ -868,7 +840,7 @@
 		height: 0.2rem;
 		margin-left: 1.6rem;
 		background-color: $color01;
-		content: '';
+		content: "";
 	}
 
 }
@@ -1371,6 +1343,10 @@
 				margin: 0 auto;
 				padding: 1.2rem 2rem;
 
+				@include mq(sp) {
+					text-align: center;
+				}
+
 				.tile-list-ttl {
 					padding: 0;
 					font-size: 1.4rem;
@@ -1447,7 +1423,7 @@
 				width: 100%;
 				height: 100%;
 				background: $white;
-				content: '';
+				content: "";
 				transform: scale(0, 1);
 				transform-origin: right top;
 				transition: transform 0.6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
@@ -1502,7 +1478,7 @@
 				width: 100%;
 				height: 100%;
 				background: $color01;
-				content: '';
+				content: "";
 				transform: scale(0, 1);
 				transform-origin: right top;
 				transition: transform 0.6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
@@ -1515,7 +1491,7 @@
 				width: 1.6rem;
 				height: 1.9rem;
 				background: url('#{$v-img-path}icon/icon_guide.png')no-repeat center/cover;
-				content: '';
+				content: "";
 				transform: translateY(-50%);
 
 				@include mq(sp) {

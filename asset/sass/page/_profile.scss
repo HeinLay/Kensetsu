@@ -127,8 +127,9 @@
 
       .other-pg-link {
         display: flex;
-        width: 33.8rem;
+        width: 35rem;
         margin: 5.2rem auto 0;
+        align-items: center;
 
         @include mq(sp) {
           flex-wrap: wrap;

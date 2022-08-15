@@ -220,21 +220,44 @@ $(document).ready(function () {
 $(function () {
   $('.jsModalOpen').each(function () {
     $(this).on('click', function () {
-      if ($(window).width() < 767) {
-        $('#' + $(this).data('modal')).slideToggle();
+      if ($('#' + $(this).data('modal')).hasClass('regist-modal') == true) {
+        if ($(window).width() < 767) {
+          $('#' + $(this).data('modal')).fadeIn();
+          $('#' + $(this).data('modal')).find('.modal-content').addClass('slide');
+        }
+        else {
+          $('#' + $(this).data('modal')).fadeIn();
+        }
       }
       else {
-        $('#' + $(this).data('modal')).fadeIn();
+        if ($(window).width() < 767) {  
+          $('#' + $(this).data('modal')).slideToggle('slow');
+        }
+        else {
+          $('#' + $(this).data('modal')).fadeIn();
+        }
       }
     });
   });
   $('.jsModalClose').on('click', function () {
-    if ($(window).width() < 767) {
-      $(this).parents('.modal').slideToggle();
+    if ($(this).parents('.modal').hasClass('regist-modal') == true) {
+      if ($(window).width() < 767) {
+        $(this).parents('.modal').fadeOut();
+        $(this).parents('.modal').find('.modal-content').removeClass('slide');
+      }
+      else {
+        $(this).parents('.modal').fadeOut();
+      }
     }
     else {
-      $(this).parents('.modal').fadeOut();
+      if ($(window).width() < 767) {  
+        $(this).parents('.modal').slideToggle('slow');
+      }
+      else {
+        $(this).parents('.modal').fadeOut();
+      }
     }
+    
     return false;
   });
   $('.cat-form-btn .btn-theme-04').on('click', function () {

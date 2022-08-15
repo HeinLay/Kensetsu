@@ -64,7 +64,7 @@
   <!-- End Google Tag Manager (noscript) -->
   <!-- ===============  header ============== -->
   <!--#include FILE="include/header_login.html"-->
-  <main class="content entry-step05">
+  <main class="content">
     <section class="sub-entry-pg-mv">
       <div class="sec-full">
         <h1 class="sec-ttl"><span class="main-ttl">会員登録フォーム</span></h1>
@@ -86,7 +86,7 @@
                 <label class="cmn-lbl">電話番号</label>
               </th>
               <td>
-                <input type="text" class="cmn-txt" placeholder="03-1234-5678">
+                <input type="tel" class="cmn-txt" name="phone" placeholder="03-1234-5678" pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}" required>
               </td>
             </tr>
           </tbody>

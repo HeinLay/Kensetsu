@@ -1,41 +1,41 @@
 .mypage-history {
-  .sec-rcmd-job {
-    padding-top: 6rem;
+	.sec-rcmd-job {
+		padding-top: 6rem;
 
-    @include mq(sp) {
-      padding-top: 4rem;
-      padding-bottom: 4rem;
-    }
-  }
+		@include mq(sp) {
+			padding-top: 4rem;
+			padding-bottom: 4rem;
+		}
+	}
 
-  .rcmd-col-blk {
-    .rcmd-col {
-      .rcmd-bottom {
-        padding: 2rem 1.2rem;
-        text-align: center;
+	.rcmd-col-blk {
+		.rcmd-col {
+			.rcmd-bottom {
+				padding: 2rem 1.2rem;
+				text-align: center;
 
-        @include mq(sp) {
-          padding: 1.8rem 1.2rem 2.8rem;
-        }
+				@include mq(sp) {
+					padding: 1.8rem 1.2rem 2.8rem;
+				}
 
-        .btn-theme-02 {
-          width: 26.5rem;
-          padding: 1.5rem 0;
-          font-size: 1.5rem;
+				.btn-theme-02 {
+					width: 26.5rem;
+					padding: 1.6rem 0;
+					font-size: 1.5rem;
 
-          @include mq(sp) {
-            width: 100%;
-          }
-        }
+					@include mq(sp) {
+						width: 100%;
+					}
+				}
 
-        .btn-theme-disabled {
-          width: 26.5rem;
+				.btn-theme-disabled {
+					width: 26.5rem;
 
-          @include mq(sp) {
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
+					@include mq(sp) {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
 }

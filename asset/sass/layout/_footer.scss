@@ -18,7 +18,7 @@ footer.css
     height: 1px;
     margin: 0 auto;
     background-color: $color11;
-    content: '';
+    content: "";
 
     @include mq(sp) {
       width: 88%;
@@ -219,7 +219,7 @@ footer.css
           width: 1.4rem;
           height: 1.4rem;
           background: url('#{$v-img-path}icon/icon_footer_arr.png') no-repeat center/contain;
-          content: '';
+          content: "";
         }
 
         &:hover {

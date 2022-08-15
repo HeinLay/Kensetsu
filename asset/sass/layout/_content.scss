@@ -613,6 +613,7 @@ content.css
     font-size: 1.4rem;
     font-weight: 400;
     @include m-font();
+    letter-spacing: 0.15rem;
 
     @include mq (sp) {
       line-height: 1.4;
